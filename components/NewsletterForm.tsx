@@ -1,0 +1,27 @@
+"use client";
+export default function NewsletterForm() {
+  // TODO: replace `threeeaglesforge` with your Buttondown username later
+  const action = "https://buttondown.email/api/emails/embed-subscribe/threeeaglesforge";
+  return (
+    <form
+      action={action}
+      method="post"
+      target="popupwindow"
+      onSubmit={() => window.open("https://buttondown.email/threeeaglesforge","popupwindow")}
+      className="flex flex-col sm:flex-row gap-3"
+    >
+      <label htmlFor="email" className="sr-only">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        placeholder="you@domain.com"
+        className="w-full rounded-xl bg-card border border-border px-3 py-2 text-sm"
+      />
+      <button type="submit" className="rounded-xl bg-accent px-4 py-2 text-bg text-sm font-medium hover:opacity-90">
+        Subscribe
+      </button>
+    </form>
+  );
+}

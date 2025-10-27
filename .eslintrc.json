@@ -1,0 +1,14 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "overrides": [
+    {
+      "files": ["*.cjs", "tailwind.config.*", "postcss.config.*"],
+      "env": { "node": true },
+      "rules": {
+        "import/no-commonjs": "off",
+        "@typescript-eslint/no-require-imports": "off"
+      }
+    }
+  ]
+}
+
