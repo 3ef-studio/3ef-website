@@ -2,19 +2,26 @@ import { NextResponse } from "next/server";
 import { getAllPosts } from "@/lib/posts";
 import { SITE } from "@/lib/site";
 
+type UrlItem = {
+  loc: string;
+  changefreq: string;
+  priority: string;
+  lastmod?: string; // ← optional
+};
+
 export async function GET() {
   const posts = getAllPosts();
-  const urls = [
-    { loc: SITE.url, changefreq: "weekly", priority: "1.0" },
-    { loc: `${SITE.url}/blog`, changefreq: "weekly", priority: "0.8" },
-    { loc: `${SITE.url}/about`, changefreq: "yearly", priority: "0.5" },
-    ...posts.map(p => ({
-      loc: `${SITE.url}/blog/${p.slug}`,
-      changefreq: "monthly",
-      priority: "0.7",
-      lastmod: new Date(p.date).toISOString(),
-    })),
-  ];
+  const urls: UrlItem[] = [
+  { loc: SITE.url, changefreq: "weekly", priority: "1.0" },
+  { loc: `${SITE.url}/blog`, changefreq: "weekly", priority: "0.8" },
+  { loc: `${SITE.url}/about`, changefreq: "yearly", priority: "0.5" },
+  ...posts.map((p) => ({
+    loc: `${SITE.url}/blog/${p.slug}`,
+    changefreq: "monthly",
+    priority: "0.7",
+    lastmod: new Date(p.date).toISOString(),
+  })),
+];
 
   const xml =
 `<?xml version="1.0" encoding="UTF-8"?>
