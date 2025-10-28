@@ -1,0 +1,33 @@
+# 3EF Studio – Global Context
+brand:
+  name: "Three Eagles Forge Studio"
+  short_name: "3EF Studio"
+  tagline: "Indie AI tools, domain experiments, and build-in-public notes."
+  colors:
+    bg: "#0B0F14"
+    card: "#11161C"
+    text: "#E7ECF2"
+    accent: "#5EEAD4"
+    accent2: "#60A5FA"
+  fonts:
+    sans: "Geist"
+    mono: "Geist Mono"
+
+env:
+  newsletter_provider: "buttondown"
+  analytics_provider: "plausible"
+  hosting: "vercel"
+  domain: "3ef.studio"
+
+features:
+  blog: true
+  products_page: false
+  analytics: false
+  newsletter_form: true
+  mdx_enabled: false
+  ai_agents_phase: 0  # future flag
+
+meta:
+  version: "v0.1.0-site-mvp"
+  last_updated: "2025-10-28"
+  next_sprint: "sprint-2-content-newsletter"
