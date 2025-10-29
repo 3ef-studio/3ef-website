@@ -9,7 +9,7 @@ export default function Header() {
         <nav className="flex items-center gap-4 text-sm">
           <Link href="/blog" className="hover:opacity-80">Blog</Link>
           <Link href="/about" className="hover:opacity-80">About</Link>
-          <Button className="rounded-xl bg-accent text-bg hover:opacity-90">Subscribe</Button>
+          <Button type="submit" className="inline-flex items-center rounded-xl bg-primary px-4 py-2 text-primary-foreground">Subscribe</Button>
         </nav>
       </div>
     </header>

@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import { notFound } from "next/navigation";
-import path from "node:path";
 import matter from "gray-matter";
 import { getAllPostSlugs, getPostMeta, resolvePostFile } from "@/lib/posts";
 import { markdownToHtml } from "@/lib/markdown";

@@ -19,7 +19,7 @@ export default function NewsletterForm() {
         placeholder="you@domain.com"
         className="w-full rounded-xl bg-card border border-border px-3 py-2 text-sm"
       />
-      <button type="submit" className="rounded-xl bg-accent px-4 py-2 text-bg text-sm font-medium hover:opacity-90">
+      <button type="submit" className="inline-flex items-center rounded-xl bg-primary px-4 py-2 text-primary-foreground">
         Subscribe
       </button>
     </form>
