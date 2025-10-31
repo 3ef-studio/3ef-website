@@ -7,7 +7,7 @@ export default function NewsletterForm() {
       action={action}
       method="post"
       target="popupwindow"
-      onSubmit={() => window.open("https://buttondown.email/threeeaglesforge","popupwindow")}
+      onSubmit={() => window.open("https://buttondown.email/3ef-studio","popupwindow")}
       className="flex flex-col sm:flex-row gap-3"
     >
       <label htmlFor="email" className="sr-only">Email</label>

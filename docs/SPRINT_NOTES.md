@@ -65,3 +65,27 @@ Commits
 
 feat(theme): complete Sprint 0.2 brand tokens + dark palette alignment
 fix(meta): ensure absolute site URL with protocol for metadataBase
+
+## Sprint 0.3 — Core Pages (Home + About)
+
+**Goal:** Ship the first fully branded public pages (Home + About) with functional navigation, metadata, and SEO compliance.
+
+**Completed**
+- ✅ `/app/page.tsx` — Hero section with tagline and forge imagery
+- ✅ `/app/about/page.tsx` — About page prose + mission + contact
+- ✅ Header/Footer integrated with active nav, skip link, and dynamic year
+- ✅ Global metadata configured (title templates, OG/Twitter tags, themeColor)
+- ✅ Added branded `og-image.png` for social previews
+- ✅ Valid `robots.txt` + dynamic sitemap; resolved Vercel env URL typo
+- ✅ Lighthouse results:
+  - `/` → Perf 96 | SEO 100 | A11y 98
+  - `/about` → Perf 97 | SEO 100 | A11y 99
+- ✅ Deployed to Vercel production (`https://3ef.studio`)
+
+**Deferred / Next**
+- [ ] Add mobile navigation drawer (track in TODO_NEXT)
+- [X] Per-page OG images (Phase 2)
+- [ ] Finalize favicon and brand lockup for browser tab
+
+**Summary:**  
+Sprint 0.3 closed out Phase 0 (MVP foundation). The public site now renders complete, validated pages with green Lighthouse scores across all categories.
