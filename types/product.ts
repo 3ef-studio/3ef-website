@@ -19,4 +19,5 @@ export type Product = {
   badges?: string[];
   cta_primary?: { label: string; url: string };
   pricing?: ProductPricing;
+  features?: string[]; // optional
 };

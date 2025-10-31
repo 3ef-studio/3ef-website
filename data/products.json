@@ -18,7 +18,13 @@
           { "name": "Ultra", "price_month": 30, "rate_limit": "9k req/mo", "url": "https://rapidapi.com/pwg930/api/veilmark?plan=ultra" },
           { "name": "Mega", "price_month": 85, "rate_limit": "25k req/mo", "url": "hhttps://rapidapi.com/pwg930/api/veilmark?plan=mega" }
         ]
-      }
+      },
+      "features": [
+        "Scan Image & text endpoints",
+        "Deepfake/face-swap detection",
+        "Detailed evidence reports",
+        "1-line cURL examples"
+    ]
     },
     {
       "slug": "csvmend",
@@ -27,7 +33,16 @@
       "status": "available",
       "price_display": "$7",
       "badges": ["Utility", "Download"],
-      "cta_primary": { "label": "Buy on Payhip", "url": "https://payhip.com/b/CXHjI" }
+      "cta_primary": { "label": "Buy on Payhip", "url": "https://payhip.com/b/CXHjI" },
+      "features": [
+            "Removes blank rows and duplicate headers",
+            "Replaces nulls and missing values (NA, N/A, None, etc.)",
+            "Normalizes date formats (ISO-8601)",
+            "Cleans up stray spaces and CSV injection attempts (=SUM(...), etc.)",
+            "Detects and drops fully empty columns",
+            "Supports Boolean and percentage normalization",
+            "Generates a .report.json summary and .errors.csv for full transparency"
+        ]
     },
     {
       "slug": "launch-guide",
@@ -36,7 +51,12 @@
       "status": "available",
       "price_display": "$14",
       "badges": ["Guide", "Playbook"],
-      "cta_primary": { "label": "Buy on Payhip", "url": "https://payhip.com/b/OglzD" }
+      "cta_primary": { "label": "Buy on Payhip", "url": "https://payhip.com/b/OglzD" },
+      "features": [
+            "You will learn how to: Choose the right no-code tool for your goals, Publish, validate, and collect real feedback — all in one focused session, and more.",
+            "Includes: 49-page PDF guide, Worksheets and AI prompt library",
+            "Author tips and best practices from real launch experience!"
+        ]
     },
     {
         "slug": "poststream",

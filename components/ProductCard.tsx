@@ -46,7 +46,11 @@ export default function ProductCard({ product }: Props) {
       </div>
 
       {/* Title & summary */}
-      <h3 className="text-xl font-semibold">{title}</h3>
+     <h3 className="text-xl font-semibold">
+        <Link href={`/products/${product.slug}`} className="hover:underline underline-offset-2">
+            {title}
+        </Link>
+      </h3>
       <p className="text-muted-foreground mt-2">{summary}</p>
 
       {/* Price / tiers */}

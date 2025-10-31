@@ -11,3 +11,8 @@ export async function getProductBySlug(slug: string): Promise<Product | undefine
   const all = await getAllProducts();
   return all.find((p) => p.slug === slug);
 }
+
+export async function getAllProductSlugs(): Promise<string[]> {
+  const all = await getAllProducts();
+  return all.map((p) => p.slug);
+}
