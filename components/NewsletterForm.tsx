@@ -1,7 +1,7 @@
 "use client";
 export default function NewsletterForm() {
   // TODO: replace `threeeaglesforge` with your Buttondown username later
-  const action = "https://buttondown.email/api/emails/embed-subscribe/threeeaglesforge";
+  const action = "https://buttondown.email/api/emails/embed-subscribe/3ef-studio";
   return (
     <form
       action={action}
