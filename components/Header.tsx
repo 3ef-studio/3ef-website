@@ -11,6 +11,7 @@ export default function Header() {
         <div className="font-semibold">Three Eagles Forge Studio</div>
         <nav aria-label="Primary" className="hidden sm:flex gap-1">
           <NavLink href="/">Home</NavLink>
+          <NavLink href="/products">Products</NavLink>
           <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/about">About</NavLink>
         </nav>
