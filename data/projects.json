@@ -1,0 +1,48 @@
+{
+  "projects": [
+    {
+      "slug": "veilmark",
+      "name": "VeilMark",
+      "summary": "AI-authorship & deepfake signal project (bot + API).",
+      "status": "active",             
+      "badges": ["AI","Security"],
+      "links": {
+        "repo": "https://github.com/pwg930/VM-AIBot",
+        "docs": "/products/veilmark",
+        "live": ""
+      },
+      "highlights": [
+        "Dual-model pipeline (AI art + deepfake)",
+        "Discord bot + REST API",
+        "RapidAPI listing for tiers"
+      ],
+      "details": "Focus on practical detection signals with thresholds and explanations."
+    },
+    {
+      "slug": "dde",
+      "name": "Domain Discovery Engine",
+      "summary": "Generates, scores, and filters brandable domain names for domain flippers.",
+      "status": "active",
+      "badges": ["Automation","SEO"],
+      "links": {
+        "repo": "https://github.com/3ef-studio/devkit",
+        "docs": "",
+        "live": ""
+      },
+      "highlights": ["TLD weighting","Keyword enrichment","Score tuning"],
+      "details": "LLM + heuristics + availability checks; pipeline is modular."
+    },
+    {
+      "slug": "csvmend",
+      "name": "csvMend",
+      "summary": "Quick CSV cleanup and normalization utilities.",
+      "status": "active",
+      "badges": ["Utility","Data"],
+      "links": {
+        "repo": "https://github.com/3ef-studio/csvcmend",
+        "docs": "/products/csvclean",
+        "live": ""
+      }
+    }
+  ]
+}
