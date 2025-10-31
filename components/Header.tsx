@@ -1,16 +1,23 @@
-import Link from "next/link";
-import { Button } from "./ui/button";
+// components/Header.tsx (add/adjust these bits)
+import NavLink from "@/components/NavLink";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-white/5 bg-bg/80 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-white/5 backdrop-blur">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2">
+        Skip to content
+      </a>
       <div className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
-        <Link href="/" className="font-semibold tracking-tight">3EF Studio</Link>
-        <nav className="flex items-center gap-4 text-sm">
-          <Link href="/blog" className="hover:opacity-80">Blog</Link>
-          <Link href="/about" className="hover:opacity-80">About</Link>
-          <Button type="submit" className="inline-flex items-center rounded-xl bg-primary px-4 py-2 text-primary-foreground">Subscribe</Button>
+        <div className="font-semibold">Three Eagles Forge Studio</div>
+        <nav aria-label="Primary" className="hidden sm:flex gap-1">
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/blog">Blog</NavLink>
+          <NavLink href="/about">About</NavLink>
         </nav>
+        {/* Optional: mobile menu button */}
+        <div className="sm:hidden">
+          {/* Add your menu button + sheet/drawer here if not already present */}
+        </div>
       </div>
     </header>
   );

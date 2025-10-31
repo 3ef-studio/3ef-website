@@ -68,7 +68,7 @@ export default function AboutPage() {
           <p>
             GitHub:{" "}
             <Link
-              href="https://github.com/"
+              href="https://github.com/3ef-studio"
               target="_blank"
               rel="noopener noreferrer"
             >
