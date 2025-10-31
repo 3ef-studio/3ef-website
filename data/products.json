@@ -1,0 +1,50 @@
+{
+  "products": [
+    {
+      "slug": "veilmark",
+      "title": "VeilMark API",
+      "summary": "AI-authorship & deepfake signals for images and text via REST.",
+      "status": "available",
+      "price_display": "From $9/mo",
+      "badges": ["API", "Security", "AI"],
+      "cta_primary": {
+        "label": "View on RapidAPI",
+        "url": "https://rapidapi.com/pwg930/api/veilmark"
+      },
+      "pricing": {
+        "provider": "rapidapi",
+        "tiers": [
+          { "name": "Pro", "price_month": 10,  "rate_limit": "3k req/mo",  "url": "https://rapidapi.com/pwg930/api/veilmark?plan=pro" },
+          { "name": "Ultra", "price_month": 30, "rate_limit": "9k req/mo", "url": "https://rapidapi.com/pwg930/api/veilmark?plan=ultra" },
+          { "name": "Mega", "price_month": 85, "rate_limit": "25k req/mo", "url": "hhttps://rapidapi.com/pwg930/api/veilmark?plan=mega" }
+        ]
+      }
+    },
+    {
+      "slug": "csvmend",
+      "title": "csvMend",
+      "summary": "Clean, normalize, and repair your CSVs in seconds.",
+      "status": "available",
+      "price_display": "$7",
+      "badges": ["Utility", "Download"],
+      "cta_primary": { "label": "Buy on Payhip", "url": "https://payhip.com/b/CXHjI" }
+    },
+    {
+      "slug": "launch-guide",
+      "title": "Launch a Simple Landing Page in 1 Hour",
+      "summary": "49-page guide with checklists, prompts, and templates.",
+      "status": "available",
+      "price_display": "$14",
+      "badges": ["Guide", "Playbook"],
+      "cta_primary": { "label": "Buy on Payhip", "url": "https://payhip.com/b/OglzD" }
+    },
+    {
+        "slug": "poststream",
+        "title": "PostStream",
+        "summary": "Lightweight agent to suggest content from your ChatGPT history to post to X/LinkedIn.",
+        "status": "coming-soon",
+        "badges": ["Utility","AI"],
+        "price_display": "TBD"
+    }
+  ]
+}
