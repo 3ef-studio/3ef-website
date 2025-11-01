@@ -4,6 +4,14 @@
     {
       "project": "3EF Website",
       "repo": "3ef-studio/3ef-website",
+      "sha": "ab2ddf2",
+      "message": "Adding Forge Activity section to homepage",
+      "timestamp": "2025-10-31T20:23:036",
+      "branch": "main"
+    },
+    {
+      "project": "3EF Website",
+      "repo": "3ef-studio/3ef-website",
       "sha": "c70bbf1",
       "message": "Blog update - what is 3ef?",
       "timestamp": "2025-10-31T20:10:00Z",
