@@ -1,0 +1,47 @@
+{
+  "updated_at": "2025-10-31T18:40:00Z",
+  "items": [
+    {
+      "project": "3EF Website",
+      "major_goal": "Visual polish pass",
+      "details": ["Blog Polish", "Newsletter update", "SEO & Analytics"],
+      "status": "In Progress",
+      "target_sprint": "S-2025.11.02"
+    },
+    {
+      "project": "3EF Website",
+      "major_goal": "Phase4 - API Docs & Gateway",
+      "details": ["Docs structure", "Fast API Endpoint", "Playground UI"],
+      "status": "Up Next",
+      "target_sprint": "TBD"
+    },
+     {
+      "project": "3EF Website",
+      "major_goal": "Phase4 - API Key Management",
+      "details": ["New Account / Key Request", "Rotate Key / Request New Key", "Playground Integration"],
+      "status": "Planned",
+      "target_sprint": "TBD"
+    },
+     {
+      "project": "3EF Website",
+      "major_goal": "Phase4 - Stripe Integration / Billing",
+      "details": ["WebHooks", "Stripe Product Setup", "Update Products page for Direct Billing"],
+      "status": "Planned",
+      "target_sprint": "TBD"
+    },
+    {
+      "project": "VeilMark",
+      "major_goal": "Public roadmap page",
+      "details": ["Top FAQs", "Model version badges"],
+      "status": "Planned",
+      "target_sprint": "S-2025.11.08"
+    },
+    {
+      "project": "Domain Discovery Engine",
+      "major_goal": "Add bulk export feature",
+      "details": ["CSV export", "API endpoint"],
+      "status": "Planned",
+      "target_sprint": "S-2025.11.15"
+    }
+  ]
+}

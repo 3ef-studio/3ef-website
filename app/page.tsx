@@ -1,6 +1,7 @@
 // /app/page.tsx
 import Link from "next/link";
 import NewsletterForm from "@/components/NewsletterForm";
+import ForgeActivity from "@/components/ForgeActivity";
 import { getLatestPosts } from "@/lib/posts";
 import Hero from "@/components/Hero";
 
@@ -10,7 +11,7 @@ export default function HomePage() {
   return (
     <main className="space-y-12">
       <Hero />
-
+      <ForgeActivity />
       {/* Newsletter target for #newsletter */}
       <section id="newsletter" className="mx-auto max-w-3xl rounded-2xl bg-card p-6 shadow-soft">
         <h2 className="text-2xl font-semibold text-text">Get Updates</h2>
@@ -21,7 +22,7 @@ export default function HomePage() {
           <NewsletterForm />
         </div>
       </section>
-
+  
       {/* Latest posts */}
       <section className="mx-auto max-w-5xl px-6">
         <div className="mb-4 flex items-center justify-between">
