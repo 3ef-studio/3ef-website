@@ -33,14 +33,14 @@
       "details": "LLM + heuristics + availability checks; pipeline is modular."
     },
     {
-      "slug": "csvmend",
-      "name": "csvMend",
-      "summary": "Quick CSV cleanup and normalization utilities.",
-      "status": "active",
-      "badges": ["Utility","Data"],
+      "slug": "poststream",
+      "name": "PostStream Agent",
+      "summary": "AI Agent to suggest social media posts based on ChatGpt History. Requires Human Approval before posting to LinkedIn / X",
+      "status": "planning",
+      "badges": ["Ai Agent","Social Media"],
       "links": {
-        "repo": "https://github.com/3ef-studio/csvcmend",
-        "docs": "/products/csvclean",
+        "repo": "TBD",
+        "docs": "TBD",
         "live": ""
       }
     }
