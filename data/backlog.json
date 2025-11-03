@@ -10,9 +10,23 @@
     },
     {
       "project": "3EF Website",
+      "major_goal": "Newsletter signup & management - Updated",
+      "details": ["Eliminate Buttondown", "DB Setup / API Endpoint", "Website UI Integration"],
+      "status": "Up Next",
+      "target_sprint": "TBD"
+    },
+    {
+      "project": "3EF Website",
       "major_goal": "Phase4 - API Docs & Gateway",
       "details": ["Docs structure", "Fast API Endpoint", "Playground UI"],
       "status": "Up Next",
+      "target_sprint": "TBD"
+    },
+    {
+      "project": "Domain Agent",
+      "major_goal": "Custom Lander for Domain Portfolio",
+      "details": ["Build Simple landing page listing domain for sale", "CTA - gather buyer details", "Add basic analytics/SEO/Ads"],
+      "status": "Planned",
       "target_sprint": "TBD"
     },
      {
@@ -37,9 +51,9 @@
       "target_sprint": "S-2025.11.08"
     },
     {
-      "project": "Domain Discovery Engine",
-      "major_goal": "Add bulk export feature",
-      "details": ["CSV export", "API endpoint"],
+      "project": "PostStream Agent MVP",
+      "major_goal": "Basic scaffold and LLM integration",
+      "details": ["Read In CHatGPT Stream history", "Basic Post Recommendation engine", "Get Post Analysis/Feedback"],
       "status": "Planned",
       "target_sprint": "S-2025.11.15"
     }

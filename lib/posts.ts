@@ -5,10 +5,12 @@ import matter from "gray-matter";
 export type PostMeta = {
   slug: string;
   title: string;
-  date: string;
+  date: string;                 // ISO string; can be ""
   summary?: string;
   tags?: string[];
   status?: "published" | "draft";
+  image?: string;               // NEW: cover image path, e.g. /images/blog/xyz.jpg
+  imageAlt?: string;            // NEW: alt text for the image
 };
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
@@ -38,14 +40,23 @@ export function getPostMeta(slug: string): PostMeta {
   }
   const raw = fs.readFileSync(file, "utf8");
   const { data } = matter(raw);
+
   return {
     slug,
-    title: data.title ?? slug,
-    date: data.date ?? "",
-    summary: data.summary ?? "",
-    tags: data.tags ?? [],
-    status: data.status ?? "published",
+    title: (data.title as string) ?? slug,
+    date: (data.date as string) ?? "",
+    summary: (data.summary as string) ?? "",
+    tags: (Array.isArray(data.tags) ? (data.tags as string[]) : []) ?? [],
+    status: ((data.status as PostMeta["status"]) ?? "published"),
+    image: (data.image as string) || undefined,
+    imageAlt: (data.imageAlt as string) || undefined,
   };
+}
+
+function safeTime(d: string): number {
+  // Return 0 when missing/invalid so those fall to the bottom
+  const t = Date.parse(d);
+  return Number.isNaN(t) ? 0 : t;
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -59,7 +70,8 @@ export function getAllPosts(): PostMeta[] {
     })
     .filter((x): x is PostMeta => Boolean(x))
     .filter((p) => p.status !== "draft")
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    // Newest first; undated posts appear last
+    .sort((a, b) => safeTime(b.date) - safeTime(a.date));
 }
 
 /** Convenience for Home */
