@@ -3,17 +3,17 @@
   "items": [
     {
       "project": "3EF Website",
-      "major_goal": "Visual polish pass",
-      "details": ["Blog Polish", "Newsletter update", "SEO & Analytics"],
+      "major_goal": "Newsletter signup & management - Updated",
+      "details": ["DB Setup / API Endpoint", "Website UI Integration", "Email Validation"],
       "status": "In Progress",
-      "target_sprint": "S-2025.11.02"
+      "target_sprint": "11/07/2025"
     },
     {
       "project": "3EF Website",
-      "major_goal": "Newsletter signup & management - Updated",
-      "details": ["Eliminate Buttondown", "DB Setup / API Endpoint", "Website UI Integration"],
+      "major_goal": "Services Page",
+      "details": ["Consulting Services offering described", "Capture interest", "Schedule a call integration"],
       "status": "Up Next",
-      "target_sprint": "TBD"
+      "target_sprint": "11/14/2025"
     },
     {
       "project": "3EF Website",
