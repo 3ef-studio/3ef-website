@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* ✅ Plausible analytics script (simplest form) */}
         <Script
           defer
-          data-domain="3ef.studio"   // <- match your domain in Plausible
+          data-domain="3ef-website.vercel.app/"   // <- match your domain in Plausible
           src="https://plausible.io/js/script.js"
         />
       </head>
