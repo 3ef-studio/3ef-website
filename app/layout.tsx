@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";           // 👈 add this
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE.name,
     description: SITE.description,
+    creator: "@3EF_Studio",
   },
   alternates: { canonical: "/" },
 };
@@ -30,7 +32,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
-    <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background text-foreground antialiased`}>
+      <head>
+        {/* ✅ Plausible analytics script (simplest form) */}
+        <Script
+          defer
+          data-domain="3ef.studio"   // <- match your domain in Plausible
+          src="https://plausible.io/js/script.js"
+        />
+      </head>
+
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background text-foreground antialiased`}
+      >
         <Header />
         <main className="mx-auto max-w-6xl px-4">{children}</main>
         <Footer />
