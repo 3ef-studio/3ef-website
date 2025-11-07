@@ -5,7 +5,7 @@
       "title": "VeilMark API",
       "summary": "AI-authorship & deepfake signals for images and text via REST.",
       "status": "available",
-      "price_display": "From $9/mo",
+      "price_display": "From $10/mo",
       "badges": ["API", "Security", "AI"],
       "cta_primary": {
         "label": "View on RapidAPI",
@@ -16,7 +16,7 @@
         "tiers": [
           { "name": "Pro", "price_month": 10,  "rate_limit": "3k req/mo",  "url": "https://rapidapi.com/pwg930/api/veilmark?plan=pro" },
           { "name": "Ultra", "price_month": 30, "rate_limit": "9k req/mo", "url": "https://rapidapi.com/pwg930/api/veilmark?plan=ultra" },
-          { "name": "Mega", "price_month": 85, "rate_limit": "25k req/mo", "url": "hhttps://rapidapi.com/pwg930/api/veilmark?plan=mega" }
+          { "name": "Mega", "price_month": 85, "rate_limit": "25k req/mo", "url": "https://rapidapi.com/pwg930/api/veilmark?plan=mega" }
         ]
       },
       "features": [
