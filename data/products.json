@@ -58,6 +58,22 @@
             "Author tips and best practices from real launch experience!"
         ]
     },
+        {
+        "slug": "vmbrowserextension",
+        "title": "VeilMark Browser Extension",
+        "summary": "Browser extension to scan images and text for AI-authorship signals.",
+        "status": "available",
+        "badges": ["AI","Download"],
+        "cta_primary": { "label": "Download", "url": "https://chromewebstore.google.com/detail/veilmark-%E2%80%93-ai-detection/ifbgkjabkikikhpjnndeifdbdhbgmgge?authuser=0&hl=en" },
+        "price_display": "Free with API Key",
+        "features": [
+            "Right-click to scan – Select text or right-click an image and choose “VeilMark: Scan” to run a check.",
+            "Detailed results – See confidence scores, labels (AI vs. Human), and which model made the call.",
+            "Visual evidence – For images, review overlays and heatmaps that highlight the areas the model relied on.",
+            "Usage tracking – Built-in usage panel shows your current plan, limits, and scans remaining.",
+            "Flexible API keys – Use either a VeilMark-issued key or a RapidAPI subscription."
+        ]
+    },
     {
         "slug": "poststream",
         "title": "PostStream",
