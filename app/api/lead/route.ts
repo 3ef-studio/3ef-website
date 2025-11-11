@@ -1,6 +1,7 @@
 // app/api/lead/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
+import { sendLeadConfirm } from "@/lib/email/leadConfirm";
 import { z } from "zod";
 
 export const runtime = "nodejs"; // full Node APIs, generous limits
@@ -49,6 +50,9 @@ export async function POST(req: NextRequest) {
     `;
 
     // success
+    sendLeadConfirm({ to: email, name }).catch((e) =>
+        console.error("lead_confirm_background_error", e)
+    );
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("lead_insert_error", err);
