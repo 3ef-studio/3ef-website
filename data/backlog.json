@@ -11,7 +11,7 @@
     {
       "project": "3EF Website",
       "major_goal": "Services Page",
-      "details": ["Consulting Services offering described", "Capture interest", "Schedule a call integration"],
+      "details": ["Consulting Services offering described", "Capture interest", "Send Confirmation Email"],
       "status": "In Progress",
       "target_sprint": "11/14/2025"
     },
