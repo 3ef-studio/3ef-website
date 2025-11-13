@@ -3,17 +3,10 @@
   "items": [
     {
       "project": "3EF Website",
-      "major_goal": "Newsletter signup & management - Updated",
-      "details": ["DB Setup / API Endpoint", "Website UI Integration", "Email Validation"],
-      "status": "Completed",
-      "target_sprint": "11/07/2025"
-    },
-    {
-      "project": "3EF Website",
       "major_goal": "Services Page",
       "details": ["Consulting Services offering described", "Capture interest", "Send Confirmation Email"],
-      "status": "In Progress",
-      "target_sprint": "11/14/2025"
+      "status": "Completed",
+      "target_sprint": "11/12/2025"
     },
     {
       "project": "3EF Website",
