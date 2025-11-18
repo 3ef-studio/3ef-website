@@ -12,7 +12,7 @@
       "project": "3EF Website",
       "major_goal": "Portfolio Page Addition",
       "details": ["Create Portfolio Page Structure", "Content Refinement", "Test and validate"],
-      "status": "Planned",
+      "status": "In Progress",
       "target_sprint": "11/21/2025"
     },
     {
@@ -20,7 +20,7 @@
       "major_goal": "Newsletter Phase 1",
       "details": ["Create Evaluation Agent", "Create Pricing Agent", "Newsletter Landing Page / Markdown Formatting"],
       "status": "Planned",
-      "target_sprint": "11/21/2025"
+      "target_sprint": "11/28/2025"
     },
     {
       "project": "3EF Website",
