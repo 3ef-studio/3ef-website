@@ -1,5 +1,5 @@
 {
-  "updated_at": "2025-11-07T18:40:00Z",
+  "updated_at": "2025-11-18T18:40:00Z",
   "items": [
     {
       "project": "3EF Website",
@@ -10,8 +10,22 @@
     },
     {
       "project": "3EF Website",
+      "major_goal": "Portfolio Page Addition",
+      "details": ["Create Portfolio Page Structure", "Content Refinement", "Test and validate"],
+      "status": "Planned",
+      "target_sprint": "11/21/2025"
+    },
+    {
+      "project": "DDE",
+      "major_goal": "Newsletter Phase 1",
+      "details": ["Create Evaluation Agent", "Create Pricing Agent", "Newsletter Landing Page / Markdown Formatting"],
+      "status": "Planned",
+      "target_sprint": "11/21/2025"
+    },
+    {
+      "project": "3EF Website",
       "major_goal": "Site-wide conistency updates",
-      "details": ["Establish conssistent look and feel across site", "Apply revisions", "Test and validate"],
+      "details": ["Establish consistent look and feel across site", "Apply revisions", "Test and validate"],
       "status": "Planned",
       "target_sprint": "11/14/2025"
     },
