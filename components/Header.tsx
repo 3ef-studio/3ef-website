@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { JSX } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import NavLink from "@/components/NavLink";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,7 +29,7 @@ export default function Header(): JSX.Element {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/5 backdrop-blur bg-background/80">
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2"
@@ -36,11 +37,29 @@ export default function Header(): JSX.Element {
         Skip to content
       </a>
 
-      <div className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
-        {/* Brand */}
-        <div className="font-semibold">Three Eagles Forge Studio</div>
+      {/* Removed fixed h-14, use padding instead so logo can grow */}
+      <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        {/* Brand + Logo */}
+        <Link
+          href="/"
+          className="flex items-center gap-3 group rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          {/* Bigger base size + stronger scale */}
+          <div className="relative h-10 w-10 sm:h-12 sm:w-12 transform transition-transform duration-300 group-hover:scale-150 group-focus-within:scale-150">
+            <Image
+              src="/images/logo.jpg"
+              alt="Three Eagles Forge Studio logo"
+              fill
+              priority
+              className="object-contain rounded-md"
+            />
+          </div>
+          <span className="font-semibold text-sm sm:text-base">
+            Three Eagles Forge Studio
+          </span>
+        </Link>
 
-        {/* Desktop nav (unchanged) */}
+        {/* Desktop nav */}
         <nav aria-label="Primary" className="hidden sm:flex gap-1">
           {links.map((l) => (
             <NavLink key={l.href} href={l.href}>
