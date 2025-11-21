@@ -3,23 +3,16 @@
   "items": [
     {
       "project": "3EF Website",
-      "major_goal": "Services Page",
-      "details": ["Consulting Services offering described", "Capture interest", "Send Confirmation Email"],
-      "status": "Completed",
-      "target_sprint": "11/12/2025"
-    },
-    {
-      "project": "3EF Website",
       "major_goal": "Portfolio Page Addition",
       "details": ["Create Portfolio Page Structure", "Content Refinement", "Test and validate"],
-      "status": "In Progress",
+      "status": "Completed",
       "target_sprint": "11/21/2025"
     },
     {
       "project": "DDE",
       "major_goal": "Newsletter Phase 1",
       "details": ["Create Evaluation Agent", "Create Pricing Agent", "Newsletter Landing Page / Markdown Formatting"],
-      "status": "Planned",
+      "status": "Up Next",
       "target_sprint": "11/28/2025"
     },
     {

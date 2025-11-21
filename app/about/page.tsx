@@ -63,8 +63,7 @@ export default function AboutPage() {
               <h2 className="text-xl font-semibold">See the work in context</h2>
               <p className="text-sm text-muted-foreground">
                 If you’d like a closer look at what I’m actually building, you can
-                explore a working portfolio of projects and experiments—VeilMark,
-                the Domain Discovery Engine, csvClean, and more.
+                explore a working portfolio of projects and experiments:
               </p>
               <div>
                 <CtaTrack
