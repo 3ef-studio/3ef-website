@@ -12,6 +12,15 @@ export default function Footer() {
         </p>
         <div className="flex items-center gap-4">
           <Link
+            href="/portfolio"
+            className="hover:text-foreground hover:underline underline-offset-2"
+          >
+            Portfolio
+          </Link>
+
+
+
+          <Link
             href="https://github.com/3ef-studio"
             target="_blank"
             rel="noopener noreferrer"
