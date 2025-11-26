@@ -4,6 +4,14 @@
       {
         "project": "3EF Website",
         "repo": "3ef-studio/3ef-website",
+        "sha": "c09de01",
+        "message": "Added DDE Newsletter.",
+        "timestamp": "2025-11-26T11:36:06Z",
+        "branch": "main"
+      },
+      {
+        "project": "3EF Website",
+        "repo": "3ef-studio/3ef-website",
         "sha": "8c1bfd8",
         "message": "Added Portfolio page and links throughout site.",
         "timestamp": "2025-11-21T16:46:06Z",

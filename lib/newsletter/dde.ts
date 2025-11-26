@@ -37,10 +37,8 @@ const DDE_OUT_ROOT =
   process.env.DDE_OUT_ROOT ||
   path.join(
     process.cwd(),
-    "tools",
-    "domain_discovery",
-    "newsletter",
-    "out",
+    "data",
+    "dde",
   );
 
 const OUT_ROOT = DDE_OUT_ROOT;
