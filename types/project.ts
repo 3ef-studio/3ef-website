@@ -2,6 +2,7 @@ export type ProjectLinks = {
   repo?: string;
   docs?: string;
   live?: string;
+  ddenewsletter?: string;
 };
 
 export type Project = {

@@ -2,7 +2,7 @@
 import ClientEvent from "@/components/ClientEvent";
 import CtaTrack from "@/components/CtaTrack";
 import LeadForm from "@/components/LeadForm"; // ← NEW
-import Link from "next/link";
+
 
 export const metadata = {
   title: "Forge Advisory — 3EF Consulting",

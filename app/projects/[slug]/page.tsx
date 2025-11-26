@@ -73,6 +73,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <section className="space-y-2">
           <h2 className="text-lg font-semibold">Links</h2>
           <div className="text-sm flex flex-wrap gap-4">
+            {links.ddenewsletter && <Link href={links.ddenewsletter} className="hover:underline underline-offset-2">Weekly Domains Newsletter →</Link>}
             {links.repo && <Link href={links.repo} className="hover:underline underline-offset-2">GitHub →</Link>}
             {links.docs && <Link href={links.docs} className="hover:underline underline-offset-2">Docs →</Link>}
             {links.live && <Link href={links.live} className="hover:underline underline-offset-2">Live →</Link>}

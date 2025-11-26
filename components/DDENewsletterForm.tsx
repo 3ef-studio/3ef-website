@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { track } from "@/lib/analytics";
 
-export default function NewsletterForm({ source = "Home Page" }: { source?: string }) {
+export default function NewsletterForm({ source = "DDE Newsletter" }: { source?: string }) {
   const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);

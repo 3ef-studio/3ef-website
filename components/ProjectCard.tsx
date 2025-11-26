@@ -51,6 +51,14 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       {/* ─── Links ─── */}
       <div className="mt-4 text-sm flex flex-wrap gap-3">
+        {links?.ddenewsletter && (
+          <Link
+            href={links.ddenewsletter}
+            className="text-white/80 hover:underline underline-offset-2"
+          >
+            Weekly Domains Newsletter →
+          </Link>
+        )}
         {links?.repo && (
           <Link
             href={links.repo}

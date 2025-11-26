@@ -27,7 +27,8 @@
       "links": {
         "repo": "https://github.com/3ef-studio/devkit",
         "docs": "",
-        "live": ""
+        "live": "",
+        "ddenewsletter": "/newsletter/domains"
       },
       "highlights": ["TLD weighting","Keyword enrichment","Score tuning"],
       "details": "LLM + heuristics + availability checks; pipeline is modular."
