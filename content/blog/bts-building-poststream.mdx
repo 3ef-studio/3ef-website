@@ -1,0 +1,130 @@
+---
+title: "Behind the Scenes: Building PostStream — My Multi-Agent AI Content Engine"
+description: "A breakdown of how I designed a multi-agent AI system capable of planning, writing, editing, and refining content automatically."
+date: "2025-11-28"
+image: "/images/blog/blog_eagle.jpg"
+imageAlt: "Forge sparks in a dark workshop"
+---
+
+Over the last month, I've been experimenting with **agentic AI systems.**   Getting awar from single prompts. Introducing *cooperative agents* with defined roles, memory, and iteration. That work became **PostStream**, a lightweight multi-agent architecture I’m using to automatically plan, draft, and refine content across multiple platforms.
+
+This post breaks down how PostStream works under the hood, why I chose a multi-agent approach, and what I’ve learned so far.
+
+## Why Multi-Agent Instead of One Giant Prompt?
+
+Traditional single-prompt generation works for simple tasks, but it quickly breaks down when you need:
+- consistent tone  
+- platform-specific formatting  
+- reliability  
+- structure  
+- reasoning + creativity  
+- guardrails  
+
+Trying to make one model do everything — plan → draft → revise → format — leads to:
+
+- unpredictable outputs  
+- weak structure  
+- repeated content  
+- fragile prompts that break easily
+
+A **multi-agent architecture** solves this by giving each agent a single responsibility.
+
+PostStream breaks content creation into a pipeline:
+
+
+Each step is smaller, easier to tune, and easier to debug.
+
+## The PostStream Architecture
+
+### Planner Agent  
+The planner defines the high-level structure:
+
+- target platform (X, Reddit, LinkedIn)  
+- tone (casual, editorial, energetic, technical)  
+- required sections  
+- how long the post should be  
+- the core angle or hook  
+
+It outputs a structured JSON plan — not prose.
+
+### Writer Agent  
+The writer converts the plan into a first draft.
+
+This draft is intentionally loose:
+
+- focuses on ideas  
+- gets the content onto the page  
+- doesn’t worry about polish  
+- doesn’t enforce tone too early  
+
+Keeping the writer “creative-first” helps avoid the rigidity that often comes from early editing.
+
+### Editor Agent  
+The editor checks the draft against **tone rules**:
+
+- clarity  
+- readability  
+- sentence length  
+- voice consistency  
+- trimming redundancy  
+
+It also enforces platform conventions. For example: X prefers conciseness, Reddit allows longer exposition, LinkedIn benefits from structured sections.  If the post breaks these rules then it is sent to the revision agent.
+
+### Revision Agent  
+The revision agent acts as the 'enforcer.'
+
+It revises the content based on the feedback from the editor.  Correcting issues with:
+
+- banned phrases  
+- formatting issues  
+- JSON schema mismatches  
+- missing sections  
+- platform-specific hazards  
+- potential Reddit automod triggers  
+- X character limits  
+- markdown correctness  
+
+The revised version is then sent back to the Editor Agent to be checked again.  The flow will retry this Editor / Revison loop until a clean version is verified by the Editor.
+
+## Why This Feels More Reliable
+
+After working with PostStream for a few weeks, several things became clear:
+
+1. Smaller agents are easier to reason about  
+If the Planner fails, I know exactly where to look.  
+If the Editor drifts in tone, I update one file.
+
+2. Creativity and structure need to be separated  
+The Writer should be free to generate ideas.  
+The Editor should make them coherent.  
+Trying to do both at once produces the worst of both.
+
+3. Tone belongs *late* in the pipeline  
+Injecting tone during the first draft makes posts bland and same-sounding.
+
+4. Platform-specific constraints matter  
+Reddit automod has nothing in common with X’s character limits.  
+Each platform needs its own revision rules.
+
+5. Multi-agent loops build trust  
+I get more predictable, consistent results because each agent has a defined contract and responsibility.
+
+## What’s Next for PostStream
+
+I’m currently expanding the system with:
+
+- subreddit-specific automod rule checks  
+- analytics-driven rewrites (learn from what performs well)  
+- thread generation for X  
+- multi-level memory across agents  
+- stronger error recovery on malformed JSON  
+- a higher-level supervisor agent to direct multiple content tasks  
+- scheduling and batching routines  
+
+Long-term, I want PostStream to be a **reliable content partner** — something that can generate weekly updates, cross-platform variants, and structured posts without creating additional overhead.
+
+## Closing Thoughts
+
+Multi-agent systems aren’t magic, but they bring a surprising amount of reliability and clarity to tasks that normally feel unpredictable with single-prompt LLM use.
+
+If you'd like to follow more of these experiments (including PostStream and my Domain Discovery Engine work), you can always check new posts here on 3EF Studio.
