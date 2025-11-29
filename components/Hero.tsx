@@ -28,7 +28,6 @@ export default function Hero(): JSX.Element {
           alt="Sparks flying from a forge, representing ideas being shaped into real tools."
           fill
           priority
-          fetchPriority="high"
           sizes="100vw"
           className="object-cover object-center"
         />
