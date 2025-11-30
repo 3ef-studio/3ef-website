@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import CtaTrack from "@/components/CtaTrack";
+import ForgeActivity from "@/components/ForgeActivity";
 
 export const metadata: Metadata = {
   title: "About — 3EF Studio",
@@ -59,22 +59,7 @@ export default function AboutPage() {
                 workflow scripts.
               </li>
             </ul>
-            <section className="rounded-2xl border border-border bg-card/60 p-6 space-y-3">
-              <h2 className="text-xl font-semibold">See the work in context</h2>
-              <p className="text-sm text-muted-foreground">
-                If you’d like a closer look at what I’m actually building, you can
-                explore a working portfolio of projects and experiments:
-              </p>
-              <div>
-                <CtaTrack
-                  href="/portfolio"
-                  src="about_page"
-                  className="inline-block rounded-xl bg-accent px-5 py-3 font-medium !text-black shadow-sm transition hover:opacity-90"
-                  >
-                  View the portfolio
-                </CtaTrack>
-              </div>
-            </section>
+            
             <h2>Contact</h2>
             <p className="mb-0">
               Email:{" "}
@@ -87,7 +72,7 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                github.com (org link)
+                github.com/3ef-studio
               </Link>
             </p>
           </div>
@@ -104,8 +89,10 @@ export default function AboutPage() {
               />
             </div>
           </div>
+          
         </div>
       </section>
+      <ForgeActivity />
     </main>
   );
 }
