@@ -3,7 +3,7 @@ import { portfolioSections } from "@/lib/portfolio";
 import PortfolioClient from "./PortfolioClient";
 
 export const metadata = {
-  title: "Portfolio — Three Eagles Forge Studio",
+  title: "Projects — Three Eagles Forge Studio",
   description:
     "A working portfolio of Three Eagles Forge Studio projects: VeilMark, Domain Discovery Engine, csvClean, and agentic experiments.",
 };

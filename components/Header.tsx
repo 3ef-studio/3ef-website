@@ -21,9 +21,9 @@ export default function Header(): JSX.Element {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/products", label: "Products" },
-    { href: "/projects", label: "Projects" },
     { href: "/consulting", label: "Services" },
+    { href: "/products", label: "Products" },
+    { href: "/portfolio", label: "Projects" },
     { href: "/blog", label: "Blog" },
     { href: "/about", label: "About" },
   ];

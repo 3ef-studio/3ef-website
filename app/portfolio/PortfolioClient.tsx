@@ -34,9 +34,9 @@ export default function PortfolioClient({ sections }: PortfolioClientProps) {
       <div className="container mx-auto max-w-5xl space-y-10 px-4">
         {/* Hero / Intro */}
         <section className="rounded-2xl bg-card shadow-soft p-6 space-y-4">
-          <h1 className="text-3xl font-semibold">Portfolio</h1>
+          <h1 className="text-3xl font-semibold">Projects</h1>
           <p className="text-muted-foreground">
-            A working portfolio of experiments and products from Three Eagles
+            A working portfolio of experiments and projects from Three Eagles
             Forge Studio. This page is designed for engineers, founders, and
             hiring managers who want to see how ideas move from concept to
             shipped artifacts.
