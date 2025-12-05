@@ -1,11 +1,29 @@
 [
   {
+    "domain": "valor.io",
+    "type": "short_premium",
+    "grade": "Strong Buy",
+    "final_score": 7.6541,
+    "price_suggested": 2300,
+    "insight": "Valor is a powerful, single-word brand with strong emotional impact and excellent memorability, perfectly suited for broad tech or fintech applications; the .io TLD enhances its tech credibility.",
+    "source_run_id": "20251205T004448Z"
+  },
+  {
     "domain": "haloava.com",
     "type": "coined_tech_brandable",
     "grade": "Buy",
     "final_score": 8.6375,
     "price_suggested": 1800,
     "insight": "Combines 'halo' and 'ava' into a smooth, memorable name with a soft tech feel; suitable for a variety of startups though slightly abstract.",
+    "source_run_id": "20251204T160740Z"
+  },
+  {
+    "domain": "mirascale.com",
+    "type": "coined_tech_brandable",
+    "grade": "Buy",
+    "final_score": 8.6363,
+    "price_suggested": 1950,
+    "insight": "A blend suggesting 'mira' (wonder) and 'scale', evoking growth and innovation; clear and brandable for tech or SaaS ventures.",
     "source_run_id": "20251204T160740Z"
   },
   {
@@ -24,24 +42,6 @@
     "final_score": 8.6296,
     "price_suggested": 1750,
     "insight": "Invented name combining 'vector' and a futuristic suffix, offering a strong tech startup vibe with good memorability and clarity.",
-    "source_run_id": "20251205T041712Z"
-  },
-  {
-    "domain": "agentmodo.com",
-    "type": "coined_tech_brandable",
-    "grade": "Buy",
-    "final_score": 8.6249,
-    "price_suggested": 1700,
-    "insight": "Agentmodo combines a soft suffix with a professional tone as a coined_tech_brandable Buy on .com; priced slightly above baseline for its grade and TLD reflecting versatility and brand appeal",
-    "source_run_id": "20251205T041712Z"
-  },
-  {
-    "domain":"orahero.com",
-    "type": "coined_tech_brandable",
-    "grade": "Buy",
-    "final_score": 8.5955,
-    "price_suggested": 1650,
-    "insight": "Orahro pairs a simple, catchy prefix with 'hero,' evoking positive, heroic connotations that are easy to remember and brand, especially strong on .com.",
     "source_run_id": "20251205T041712Z"
   }
 ]
