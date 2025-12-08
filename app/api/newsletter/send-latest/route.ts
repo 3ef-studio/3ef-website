@@ -44,10 +44,21 @@ export async function POST(req: NextRequest) {
 
   // 1️⃣ Auth via shared secret header
   const token = req.headers.get("x-newsletter-token");
-  if (!MANUAL_TOKEN || !token || token !== MANUAL_TOKEN) {
-    console.warn("[send-latest] unauthorized request");
+
+  let authReason: string | null = null;
+
+  if (!MANUAL_TOKEN) {
+    authReason = "missing_manual_token_env";
+  } else if (!token) {
+    authReason = "missing_header";
+  } else if (token !== MANUAL_TOKEN) {
+    authReason = "token_mismatch";
+  }
+
+  if (authReason) {
+    console.warn("[send-latest] unauthorized request", { authReason });
     return NextResponse.json(
-      { ok: false, error: "Unauthorized" },
+      { ok: false, error: "Unauthorized", reason: authReason },
       { status: 401 },
     );
   }
