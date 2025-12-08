@@ -184,10 +184,7 @@ export default async function DdeNewsletterPage() {
       </section>
 
       <section className="text-center">
-        <a
-            href="/newsletter/domains/archive"
-            className="text-sm text-muted-foreground underline-offset-2 hover:underline"
-        >
+        <a href="/newsletter/domains/archive" className="text-sm text-muted-foreground underline-offset-2 hover:underline">
             View all past issues →
         </a>
       </section>
