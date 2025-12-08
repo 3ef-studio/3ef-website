@@ -11,7 +11,7 @@ const resend = new Resend(process.env.RESEND_API_KEY!);
 
 // Must match whatever your newsletter signup form passes as `source`
 const NEWSLETTER_SOURCE =
-  process.env.NEWSLETTER_SOURCE ?? "dde-newsletter";
+  process.env.NEWSLETTER_SOURCE ?? "DDE Newsletter";
 
 // Shared secret for manual trigger (set in Vercel env)
 const MANUAL_TOKEN = process.env.NEWSLETTER_MANUAL_TOKEN;
