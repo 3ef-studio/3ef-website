@@ -1,0 +1,84 @@
+{
+  "newsletter_run_id": "20251211T162621Z",
+  "created_at": "2025-12-11T16:31:56.158829Z",
+  "dde_runs_used": [
+    "20251211T162245Z",
+    "20251211T161648Z",
+    "20251211T161148Z",
+    "20251211T160538Z",
+    "20251211T155149Z",
+    "20251211T153755Z",
+    "20251211T145601Z",
+    "20251211T143905Z",
+    "20251211T142016Z",
+    "20251211T141520Z",
+    "20251211T135055Z",
+    "20251210T133247Z",
+    "20251210T075516Z",
+    "20251210T074558Z",
+    "20251209T150729Z"
+  ],
+  "candidate_counts": {
+    "raw_total": 560,
+    "truncated_total": 300,
+    "graded_total": 66
+  },
+  "config": {
+    "max_recent_runs": 15,
+    "max_recent_days": 7,
+    "candidates_per_run": 75,
+    "max_candidates_total": 300,
+    "runs_root": "tools/domain_discovery/out/runs"
+  },
+  "eval_agent": {
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "temperature": 0.45,
+    "max_tokens": 800,
+    "batch_size": 10,
+    "timeout_sec": 30,
+    "max_retries": 2
+  },
+  "pricing": {
+    "currency": "USD",
+    "min_price": 200,
+    "max_price": 6000,
+    "tld_baselines": {
+      ".com": {
+        "min": 900,
+        "max": 5000
+      },
+      ".ai": {
+        "min": 700,
+        "max": 3500
+      },
+      ".io": {
+        "min": 500,
+        "max": 2500
+      },
+      "other": {
+        "min": 300,
+        "max": 1500
+      }
+    },
+    "grade_multipliers": {
+      "Strong Buy": 1.25,
+      "Buy": 1.0,
+      "Watchlist": 0.6,
+      "Pass": 0.3
+    },
+    "length_hints": {
+      "short": {
+        "max_chars": 7,
+        "bump": "higher"
+      },
+      "medium": {
+        "max_chars": 12,
+        "bump": "neutral"
+      },
+      "long": {
+        "bump": "lower"
+      }
+    }
+  }
+}
