@@ -4,9 +4,17 @@
       {
         "project": "3EF Devkit",
         "repo": "3ef-studio/devkit",
-        "sha": "203dd03",
+        "sha": "954dd3c",
         "message": "Added Phase 1 of Website Upgrade Audit Agent. Initial version performs basic SEO and UI audits and generates MDX and PDF reports.",
         "timestamp": "2025-12-11T13:17:08Z",
+        "branch": "main"
+      },
+      {
+        "project": "3EF Website",
+        "repo": "3ef-studio/3ef-website",
+        "sha": "ad78165",
+        "message": "Published weekly DDE Newsletter. Added blog post and archive page.",
+        "timestamp": "2025-12-11T12:21:18Z",
         "branch": "main"
       },
       {
