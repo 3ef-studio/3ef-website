@@ -1,14 +1,5 @@
 [
   {
-    "domain": "signal.io",
-    "type": "short_premium",
-    "grade": "Strong Buy",
-    "final_score": 8.5327,
-    "price_suggested": 2300,
-    "insight": "Extremely short, memorable, and highly brandable with broad tech appeal; 'signal' is a powerful, clear word that fits perfectly with the .io TLD.",
-    "source_run_id": "20251217T185101Z"
-  },
-  {
     "domain": "getkit.io",
     "type": "two_word_descriptive",
     "grade": "Strong Buy",
@@ -16,15 +7,6 @@
     "price_suggested": 1500,
     "insight": "Short, action-oriented, and highly memorable name with a clear call to action; excellent fit for a toolkit or service platform with the .io extension.",
     "source_run_id": "20251218T003354Z"
-  },
-  {
-    "domain": "promptai.io",
-    "type": "two_word_descriptive",
-    "grade": "Strong Buy",
-    "final_score": 8.0714,
-    "price_suggested": 1500,
-    "insight": "Highly relevant and clear name for AI-related products, combining 'prompt' and 'AI' with excellent memorability and strong .io appeal.",
-    "source_run_id": "20251218T004257Z"
   },
   {
     "domain": "aiclear.io",
@@ -43,5 +25,23 @@
     "price_suggested": 1600,
     "insight": "A catchy, invented name blending 'fund' with a unique suffix 'luno', suitable for fintech or investment platforms with good memorability.",
     "source_run_id": "20251216T153409Z"
+  },
+  {
+    "domain": "scalecrux.com",
+    "type": "coined_tech_brandable",
+    "grade": "Buy",
+    "final_score": 8.6432,
+    "price_suggested": 1900,
+    "insight": "Strong, evocative blend implying growth ('scale') and core importance ('crux'), making it versatile for startups or consulting firms.",
+    "source_run_id": "20251217T121530Z"
+  },
+  {
+    "domain": "kitdepth.com",
+    "type": "two_word_descriptive",
+    "grade": "Buy",
+    "final_score": 8.6421,
+    "price_suggested": 1400,
+    "insight": "Clear and brandable two-part name suggesting comprehensive tools or resources, suitable for tech or educational products.",
+    "source_run_id": "20251214T204512Z"
   }
 ]
