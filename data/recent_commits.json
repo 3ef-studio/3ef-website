@@ -1,6 +1,14 @@
 {
-  "generated_at": "2025-11-07T18:40:00Z",
+  "generated_at": "2025-12-18T18:40:00Z",
   "items": [
+       {
+        "project": "3EF Website",
+        "repo": "3ef-studio/3ef-website",
+        "sha": "54321b2",
+        "message": "Published Blog post",
+        "timestamp": "2025-12-26T10:33:00Z",
+        "branch": "main"
+       },
        {
         "project": "3EF Website",
         "repo": "3ef-studio/3ef-website",
