@@ -45,7 +45,7 @@ export default function HomePage() {
             </p>
 
             <p className="mt-3 text-sm text-muted-foreground">
-              Underpins the consulting lane. The output is designed to be client-ready.
+              Built to produce clear, defensible findings and a practical upgrade path.
             </p>
 
             <div className="mt-5 flex items-center justify-between">
