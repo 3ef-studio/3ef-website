@@ -33,20 +33,32 @@ export default function PortfolioClient({ sections }: PortfolioClientProps) {
     <main className="py-10">
       <div className="container mx-auto max-w-5xl space-y-10 px-4">
         {/* Hero / Intro */}
-        <section className="rounded-2xl bg-card shadow-soft p-6 space-y-4">
-          <h1 className="text-3xl font-semibold">Projects</h1>
-          <p className="text-muted-foreground">
+        <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-12 text-center sm:px-10">
+        {/* background */}
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
+            <div className="absolute -bottom-24 left-8 h-72 w-72 rounded-full bg-sky-500/10 blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/30 to-background/70" />
+          </div>
+           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Projects</h1>
+
+          <div className="mt-4 space-y-3">
+          <p className="mx-auto max-w-2xl text-muted-foreground">
             A working portfolio of experiments and projects from Three Eagles
             Forge Studio. This page is designed for engineers, founders, and
             hiring managers who want to see how ideas move from concept to
             shipped artifacts.
           </p>
-          <p className="text-muted-foreground">
-            Each card below represents a real system in various stages of
-            maturity—from R&amp;D cycles to production-ready tools—with enough
-            detail to understand the architecture, tradeoffs, and learning
-            behind it.
-          </p>
+          </div>
+          <div className="mt-4 space-y-3">
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              Each card below represents a real system in various stages of
+              maturity—from R&amp;D cycles to production-ready tools—with enough
+              detail to understand the architecture, tradeoffs, and learning
+              behind it.
+            </p>
+          </div>
+         
         </section>
 
         {/* On This Page / Jump Navigation */}
