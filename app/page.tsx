@@ -11,7 +11,11 @@ export default function HomePage() {
   return (
     <main className="space-y-12">
       <Hero />
-
+      <section className="mx-auto max-w-5xl px-6">
+        <p className="text-sm text-muted-foreground">
+          An independent studio focused on building practical systems that ship and get used.
+        </p>
+      </section>
       {/* Current work */}
       <section className="mx-auto max-w-5xl px-6">
         <div className="mb-4 flex items-end justify-between gap-4">
