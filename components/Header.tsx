@@ -16,12 +16,17 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+type HeaderLink = {
+  href: string;
+  label: string;
+  primary?: boolean;
+};
+
 export default function Header(): JSX.Element {
   const [open, setOpen] = useState(false);
 
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/consulting", label: "Services" },
+  const links: HeaderLink[] = [
+    { href: "/consulting", label: "Services", primary: true },
     { href: "/products", label: "Products" },
     { href: "/portfolio", label: "Projects" },
     { href: "/blog", label: "Blog" },
@@ -37,14 +42,12 @@ export default function Header(): JSX.Element {
         Skip to content
       </a>
 
-      {/* Removed fixed h-14, use padding instead so logo can grow */}
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         {/* Brand + Logo */}
         <Link
           href="/"
           className="flex items-center gap-3 group rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          {/* Bigger base size + stronger scale */}
           <div className="relative h-10 w-10 sm:h-12 sm:w-12 transform transition-transform duration-300 group-hover:scale-150 group-focus-within:scale-150">
             <Image
               src="/images/logo.jpg"
@@ -62,7 +65,11 @@ export default function Header(): JSX.Element {
         {/* Desktop nav */}
         <nav aria-label="Primary" className="hidden sm:flex gap-1">
           {links.map((l) => (
-            <NavLink key={l.href} href={l.href}>
+            <NavLink
+              key={l.href}
+              href={l.href}
+              variant={l.primary ? "primary" : "default"}
+            >
               {l.label}
             </NavLink>
           ))}
@@ -92,7 +99,12 @@ export default function Header(): JSX.Element {
                     key={l.href}
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="-mx-3 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-foreground focus:outline-none focus:ring-2 focus:ring-accent/60 focus:ring-offset-2 focus:ring-offset-background"
+                    className={[
+                      "-mx-3 rounded-xl px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-accent/60 focus:ring-offset-2 focus:ring-offset-background",
+                      l.primary
+                        ? "bg-accent/10 text-accent font-medium hover:bg-accent/15"
+                        : "text-muted-foreground hover:text-foreground hover:bg-white/5",
+                    ].join(" ")}
                   >
                     {l.label}
                   </Link>
@@ -100,7 +112,11 @@ export default function Header(): JSX.Element {
 
                 {/* Optional mobile CTAs */}
                 <div className="mt-4 grid grid-cols-1 gap-2">
-                  <Button asChild variant="secondary" onClick={() => setOpen(false)}>
+                  <Button
+                    asChild
+                    variant="secondary"
+                    onClick={() => setOpen(false)}
+                  >
                     <Link href="/consulting">Advisory</Link>
                   </Button>
                   <Button asChild onClick={() => setOpen(false)}>
