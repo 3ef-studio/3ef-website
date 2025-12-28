@@ -14,9 +14,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Consulting — Websites, Smart Upgrades, Strategy | 3EF Studio",
+  title: "Website Audits, Refreshes & Smart Upgrades | 3EF Studio Consulting",
   description:
-    "Four ways to work with Three Eagles Forge: website audits, website refresh/build, smart upgrades, and strategy/consulting. Turn early drafts into production-ready sites. Start a conversation.",
+    "3EF Studio provides website audits, refreshes, rebuilds, and smart upgrades for small businesses and founders—improving performance, SEO, clarity, and conversions. Practical, no-nonsense consulting.",
   alternates: { canonical: "/consulting" },
 };
 

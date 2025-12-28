@@ -109,7 +109,7 @@ export default function HomePage() {
             <div className="mt-5 flex items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <Link
-                href="/portfolio"
+                href="/portfolio#dde"
                 className="text-sm font-medium text-accent hover:opacity-90"
               >
                 Explore DDE →
