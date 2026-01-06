@@ -1,32 +1,6 @@
 {
   "products": [
     {
-      "slug": "veilmark",
-      "title": "VeilMark API",
-      "summary": "AI-authorship & deepfake signals for images and text via REST.",
-      "status": "available",
-      "price_display": "From $10/mo",
-      "badges": ["API", "Security", "AI"],
-      "cta_primary": {
-        "label": "View on RapidAPI",
-        "url": "https://rapidapi.com/pwg930/api/veilmark"
-      },
-      "pricing": {
-        "provider": "rapidapi",
-        "tiers": [
-          { "name": "Pro", "price_month": 10,  "rate_limit": "3k req/mo",  "url": "https://rapidapi.com/pwg930/api/veilmark?plan=pro" },
-          { "name": "Ultra", "price_month": 30, "rate_limit": "9k req/mo", "url": "https://rapidapi.com/pwg930/api/veilmark?plan=ultra" },
-          { "name": "Mega", "price_month": 85, "rate_limit": "25k req/mo", "url": "https://rapidapi.com/pwg930/api/veilmark?plan=mega" }
-        ]
-      },
-      "features": [
-        "Scan Image & text endpoints",
-        "Deepfake/face-swap detection",
-        "Detailed evidence reports",
-        "1-line cURL examples"
-    ]
-    },
-    {
       "slug": "csvmend",
       "title": "csvMend",
       "summary": "Clean, normalize, and repair your CSVs in seconds.",
@@ -58,21 +32,14 @@
             "Author tips and best practices from real launch experience!"
         ]
     },
-        {
-        "slug": "vmbrowserextension",
-        "title": "VeilMark Browser Extension",
-        "summary": "Browser extension to scan images and text for AI-authorship signals.",
-        "status": "available",
-        "badges": ["AI","Download"],
-        "cta_primary": { "label": "Download", "url": "https://chromewebstore.google.com/detail/veilmark-%E2%80%93-ai-detection/ifbgkjabkikikhpjnndeifdbdhbgmgge?authuser=0&hl=en" },
-        "price_display": "Free with API Key",
-        "features": [
-            "Right-click to scan – Select text or right-click an image and choose “VeilMark: Scan” to run a check.",
-            "Detailed results – See confidence scores, labels (AI vs. Human), and which model made the call.",
-            "Visual evidence – For images, review overlays and heatmaps that highlight the areas the model relied on.",
-            "Usage tracking – Built-in usage panel shows your current plan, limits, and scans remaining.",
-            "Flexible API keys – Use either a VeilMark-issued key or a RapidAPI subscription."
-        ]
+    {
+        "slug": "website-upgrade-audit",
+        "title": "Automated Website Upgrade Audit",
+        "summary": "Comprehensive audit service to identify and fix website issues.",
+        "status": "coming-soon",
+        "badges": ["Utility","Audit"],
+        "cta_primary": { "label": "Request Audit", "url": "/consulting#request" },
+        "price_display": "$49"
     },
     {
         "slug": "poststream",
