@@ -1,17 +1,37 @@
-// components/Footer.tsx (replace or extend content)
+// components/Footer.tsx
 import Link from "next/link";
 import { Github, Twitter } from "lucide-react";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+
   return (
     <footer className="border-t border-white/5">
-      <div className="mx-auto max-w-6xl px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted-foreground">
+      <div className="mx-auto max-w-6xl px-4 py-10 grid gap-6 sm:grid-cols-3">
+        {/* Brand */}
+        <div className="text-sm text-muted-foreground">
           © {year} Three Eagles Forge Studio
-        </p>
-        <div className="flex items-center gap-4">
+        </div>
 
+        {/* Labs */}
+        <div className="flex flex-col gap-2 text-sm">
+         
+          <Link
+            href="/labs"
+            className="text-muted-foreground hover:text-white"
+          >
+            Experiments & Challenges
+          </Link>
+          <Link
+            href="/labs/challenge-001"
+            className="text-muted-foreground hover:text-white"
+          >
+            - Challenge 001
+          </Link>
+        </div>
+
+        {/* Social */}
+        <div className="flex items-center gap-4 sm:justify-end">
           <Link
             href="https://github.com/3ef-studio"
             target="_blank"
@@ -20,13 +40,14 @@ export default function Footer() {
           >
             <Github className="h-4 w-4" /> GitHub
           </Link>
+
           <Link
             href="https://twitter.com/3ef_studio"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-white"
           >
-            <Twitter className="h-4 w-4" /> X/Twitter
+            <Twitter className="h-4 w-4" /> X / Twitter
           </Link>
         </div>
       </div>
