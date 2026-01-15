@@ -1,0 +1,170 @@
+---
+title: "Vibe Coding isn't No-Code"
+date: "2026-01-15"
+summary: "Vibe coding does not remove the hard parts of building software. It simply delays when you notice them."
+tags: ["consulting", "webdev", "small-business", "vibe-coding"]
+status: published
+image: "/images/logo.jpg"
+imageAlt: "3EF Logo"
+---
+
+
+It’s Guardrails in Disguise
+
+Vibe coding feels like a shortcut past years of software learning. You describe an idea, an AI generates an app, and suddenly something real exists. No setup. No tutorials. No frameworks to learn first.
+
+That initial experience is genuinely powerful. It is not fake, and it is not a trick.
+
+But it also hides a reality that catches many people off guard a few sessions later.
+
+---
+
+## Why Vibe Coding Feels So Fast at First
+
+Early speed comes from borrowing a massive amount of invisible context.
+
+The model fills in defaults for you. It assumes how things should work. It makes reasonable choices about structure, data flow, and behavior without asking. This is why the first version often feels complete even when you did not think through many details.
+
+For someone new to building software, this feels like skipping the line entirely.
+
+What is actually happening is that decisions are still being made. They are just being made silently, by the model, instead of explicitly by you.
+
+That tradeoff is what makes vibe coding feel effortless early on.
+
+---
+
+## The Problems That Show Up Later
+
+After a few iterations, things usually change.
+
+You try to add one small feature and the app becomes unstable. Something that worked yesterday breaks today. You come back after a week and cannot tell how anything fits together. Performance degrades. Edge cases appear. The app feels fragile.
+
+These are not AI problems.
+
+They are normal software problems that you encountered very quickly because AI accelerated you past the beginner phase.
+
+Traditional developers spend years slowly learning where these issues come from. Vibe coders meet them all at once.
+
+---
+
+## The Missing Skill Is Not Coding
+
+Most vibe coding failures are not caused by bad prompts or weak models.
+
+They are caused by missing guardrails.
+
+Guardrails are simple constraints that tell the system what not to do, what to ignore, and when to stop. You do not need to know software terminology to use them.
+
+Examples of guardrails:
+
+* This is one screen, not a full app
+* Do not add login, accounts, or user management
+* Hardcode the data, no database
+* If it works once, stop
+* Ignore performance and edge cases for now
+
+These statements dramatically change what the AI produces.
+
+Without guardrails, the model fills gaps with complexity. With guardrails, it stays small and focused.
+
+---
+
+## Prompts Are Where Guardrails Live
+
+When you vibe code, prompts are not just instructions. They are the only place intent exists.
+
+If you do not specify constraints, the model will invent them. If you do not define an end state, the model will keep going. AI always completes the thought. Whether it completes the right one depends on the boundaries you set.
+
+Many vibe coders think the prompt is about describing the idea.
+
+The more important part is describing the limits.
+
+---
+
+## A Before and After Prompt Example
+
+Consider the difference between these two prompts.
+
+**Before: a single large ask**
+
+> Build me a simple web app that lets users track their daily habits.
+
+This prompt sounds reasonable, but it leaves almost everything open. The model has to guess how many screens exist, how data is stored, whether users log in, what happens over time, and when the app is considered finished. Each guess adds invisible complexity.
+
+**After: the same idea, decomposed**
+
+> Build a single page that displays a hardcoded list of habits with checkboxes. No accounts, no database, no persistence. The goal is only to render the UI. Stop after the page works.
+
+Followed by a second prompt:
+
+> Add local state so checking a box updates the UI. Do not save anything. Do not add new features.
+
+And later:
+
+> Extract the habit list into a small reusable component. No styling changes. Do not refactor anything else.
+
+Each prompt produces a small, understandable result. You can stop at any point. You can return later and know exactly what exists. The system grows through visible steps instead of invisible leaps.
+
+---
+
+## Why Bigger Projects Break Down
+
+As projects grow, hidden responsibilities emerge.
+
+Someone has to decide how data is stored. Someone has to handle errors. Someone has to think about speed, reliability, and what happens when things go wrong. Someone has to maintain the project over time.
+
+In traditional software, these concerns are addressed through requirements, architecture, testing, and operations. Vibe coders often encounter them only after the app already exists.
+
+At that point, fixing them feels overwhelming because the structure was never designed to support growth.
+
+---
+
+## Why Smaller Outputs Matter More Than Bigger Prompts
+
+One of the biggest differences between traditional software development and vibe coding is how work is sized.
+
+In a professional setting, large problems are rarely built all at once. They are decomposed into smaller, discrete units that can be owned, reviewed, tested, and reasoned about independently. This is what allows teams to build complex systems without losing their understanding of how everything fits together.
+
+Vibe coding works best when you borrow this idea, even if you are working alone.
+
+Instead of asking the AI to build an entire application, you ask it to build one small piece that has a clear purpose and a clear boundary. One screen. One flow. One function. One transformation.
+
+Smaller outputs are easier to understand. They are easier to debug. They are easier to throw away. Most importantly, they preserve your mental model of the system.
+
+---
+
+## How Decomposition Makes AI Work Better
+
+Breaking a problem into smaller units does not just help you. It helps the model.
+
+When each prompt focuses on a narrow task, the context becomes cleaner and more repeatable. You can reuse the same framing across sessions. You can return days later and quickly re-establish what the component does and what it does not do.
+
+This is how you avoid the feeling of starting over every time.
+
+Each prompt becomes a stable building block instead of a one-off conversation. Over time, these blocks can be assembled into more elaborate systems that you still understand because you watched each piece take shape.
+
+---
+
+## The Honest Take on Vibe Coding
+
+Vibe coding is real. It is powerful. It opens doors for people who would never have touched software otherwise.
+
+It works best when projects are intentionally small, decomposed into understandable pieces, and finished on purpose.
+
+If you want something long lived, shared, or relied on by others, you eventually need stronger guardrails and clearer boundaries between parts. In traditional software, those boundaries are written down and called a spec.
+
+In vibe coding, they live in your prompts, in how you break problems apart, and in your willingness to stop expanding a piece once it is complete.
+
+The magic does not disappear when you add structure.
+
+It becomes durable.
+
+---
+
+## A Simple Rule to Start With
+
+If you are new to vibe coding, try this:
+
+Before every prompt, write down three things your app will not do.
+
+That single habit will prevent most of the pain people blame on the tools.
