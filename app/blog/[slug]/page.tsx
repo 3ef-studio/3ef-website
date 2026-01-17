@@ -1,8 +1,14 @@
+// app/blog/[slug]/page.tsx
 import fs from "node:fs";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import matter from "gray-matter";
-import { getAllPostSlugs, getPostMeta, resolvePostFile } from "@/lib/posts";
+import {
+  getAllPostSlugs,
+  getPostMeta,
+  resolvePostFile,
+} from "@/lib/posts";
 import { markdownToHtml } from "@/lib/markdown";
 
 export async function generateStaticParams() {
@@ -16,6 +22,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   if (!slug) return { title: "Post — 3EF Studio", description: "" };
+
   try {
     const meta = getPostMeta(slug);
     return {
@@ -49,49 +56,82 @@ export default async function PostPage({
   const html = await markdownToHtml(content);
 
   return (
-    <article className="py-6">
+    <article className="mx-auto max-w-5xl px-4 py-12 space-y-12">
       {/* Header */}
-      <header className="space-y-2 mb-6">
-        <h1 className="text-3xl font-semibold">{(data.title as string) ?? slug}</h1>
+      <header className="space-y-3 max-w-2xl">
+        <Link
+          href="/blog"
+          className="text-xs text-muted-foreground hover:text-accent transition"
+        >
+          ← Back to writing
+        </Link>
+
+        <h1 className="text-3xl font-semibold">
+          {(data.title as string) ?? slug}
+        </h1>
+
         {data.date && (
-          <p className="text-sm text-white/60">
+          <p className="text-sm text-muted-foreground">
             {new Date(data.date as string).toLocaleDateString()}
           </p>
         )}
+
         {data.summary && (
-          <p className="text-muted-foreground max-w-2xl">{data.summary as string}</p>
-        )}
-        {Array.isArray(data.tags) && data.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {(data.tags as string[]).map((t) => (
-              <span key={t} className="text-[11px] px-2 py-1 rounded-full bg-white/5 text-white/80">
-                {t}
-              </span>
-            ))}
-          </div>
+          <p className="text-muted-foreground">
+            {data.summary as string}
+          </p>
         )}
       </header>
 
-      {/* Two-column: article + right-side image */}
-      <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(280px,420px)] items-start">
+      {/* Content */}
+      <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(280px,420px)] items-start">
         <div className="prose prose-invert max-w-none">
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
 
         {(data.image as string | undefined) && (
-          <aside className="sticky top-20 self-start rounded-2xl overflow-hidden border border-white/5 bg-card">
+          <aside className="sticky top-24 self-start rounded-2xl overflow-hidden border border-white/5 bg-card">
             <Image
               src={data.image as string}
-              alt={(data.imageAlt as string) ?? (data.title as string) ?? slug}
+              alt={
+                (data.imageAlt as string) ??
+                (data.title as string) ??
+                slug
+              }
               width={1400}
               height={936}
               className="w-full h-auto object-cover aspect-[3/4]"
               sizes="(min-width: 768px) 420px, 100vw"
-              priority={false}
             />
           </aside>
         )}
       </div>
+
+      {/* Continue exploring */}
+      <section className="rounded-2xl border border-border bg-background p-6 space-y-4">
+        <h2 className="text-lg font-semibold">Continue exploring</h2>
+
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-accent hover:brightness-110 transition"
+          >
+            More writing →
+          </Link>
+          <Link
+            href="/portfolio"
+            className="text-sm text-muted-foreground hover:text-accent transition"
+          >
+            View projects →
+          </Link>
+          <Link
+            href="/consulting"
+            className="text-sm text-muted-foreground hover:text-accent transition"
+          >
+            Website audits & consulting →
+          </Link>
+        </div>
+      </section>
     </article>
   );
 }
