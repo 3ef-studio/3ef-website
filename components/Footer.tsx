@@ -16,18 +16,6 @@ export default function Footer() {
         {/* Labs */}
         <div className="flex flex-col gap-2 text-sm">
          
-          <Link
-            href="/labs"
-            className="text-muted-foreground hover:text-white"
-          >
-            Experiments & Challenges
-          </Link>
-          <Link
-            href="/labs/challenge-001"
-            className="text-muted-foreground hover:text-white"
-          >
-            - Challenge 001
-          </Link>
         </div>
 
         {/* Social */}
