@@ -111,6 +111,19 @@ export default function PortfolioClient({ sections }: PortfolioClientProps) {
                           {section.summary}
                         </p>
 
+                        {section.liveUrl && (
+                          <p className="text-sm">
+                            <a
+                              href={section.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 font-medium text-accent hover:underline"
+                            >
+                              Visit live site →
+                            </a>
+                          </p>
+                        )}
+
                         {section.techStack?.length > 0 && (
                           <div className="space-y-2">
                             <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -151,7 +164,7 @@ export default function PortfolioClient({ sections }: PortfolioClientProps) {
                             </AccordionContent>
                           </AccordionItem>
                         )}
-
+                        
                         {/* Learning focus */}
                         {section.learningFocus &&
                           section.learningFocus.length > 0 && (
@@ -202,13 +215,56 @@ export default function PortfolioClient({ sections }: PortfolioClientProps) {
                               </AccordionContent>
                             </AccordionItem>
                           )}
+                          {/* Images */}
+                        {section.images && section.images.length > 2 && (
+                          <AccordionItem value="visual-comparison">
+                            <AccordionTrigger className="text-sm font-medium">
+                              Visual comparison
+                            </AccordionTrigger>
+                            <AccordionContent>
+                              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                                {section.images.slice(2).map((img, idx) => (
+                                  <button
+                                    key={`${img.src}-${idx}`}
+                                    type="button"
+                                    onClick={() =>
+                                      setSelectedImage({
+                                        src: img.src,
+                                        alt: img.alt,
+                                        caption: img.caption,
+                                      })
+                                    }
+                                    className="group block w-full text-left"
+                                  >
+                                    <div className="relative w-full overflow-hidden rounded-xl border border-border bg-muted">
+                                      <div className="relative aspect-video w-full">
+                                        <Image
+                                          src={img.src}
+                                          alt={img.alt}
+                                          fill
+                                          className="object-contain transition-transform group-hover:scale-[1.02]"
+                                          sizes="(min-width: 1024px) 320px, 100vw"
+                                        />
+                                      </div>
+                                    </div>
+                                    {img.caption && (
+                                      <p className="mt-1 text-[0.7rem] text-muted-foreground/80">
+                                        {img.caption}
+                                      </p>
+                                    )}
+                                  </button>
+                                ))}
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
+                        )}
                       </Accordion>
                     </div>
 
                     {/* Right: image stack + captions */}
                     <div className="lg:col-span-1 space-y-4">
                       {section.images && section.images.length > 0 ? (
-                        section.images.map((img, idx) => (
+                        section.images.slice(0, 2).map((img, idx) => (
                           <div key={idx} className="space-y-2">
                             <button
                               type="button"
@@ -249,6 +305,7 @@ export default function PortfolioClient({ sections }: PortfolioClientProps) {
                         </div>
                       )}
                     </div>
+ 
                   </div>
                 </CardContent>
               </Card>

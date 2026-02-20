@@ -27,9 +27,68 @@ export interface PortfolioSection {
   nextSteps?: string[];
   /** Screenshots, diagrams, etc. */
   images?: PortfolioImage[];
+  /** Optional live URL if available */
+  liveUrl?: string;
 }
 
 export const portfolioSections: PortfolioSection[] = [
+    {
+    id: "531-workshop",
+    title: "531 Workshop — Custom Furniture Website Rebuild",
+    tagline: "A modern, product-ready web presence for a real small business.",
+    summary:
+      "531 Workshop is a custom furniture and productized cutting board shop. The goal was to ship a clean, fast, mobile-friendly site that showcases craftsmanship, makes browsing easy, and supports a clear path to purchase or request a quote—without adding complexity for the client.",
+
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shopify (Buy Button / Storefront)",
+      "Vercel",
+      "Resend",
+      "PostgreSQL (Neon)",
+      "Analytics (Google Analytics)",
+    ],
+
+    details: [
+      "Redesigned and rebuilt the website with a modern, conversion-oriented layout",
+      "Implemented a clean gallery + product browsing experience",
+      "Integrated Shopify for product purchase flow",
+      "Improved mobile UX and overall performance",
+      "Set up analytics to track key actions and traffic sources",
+    ],
+
+    // This is optional — but if you have even 1 quote, add it here.
+    strategyNotes: [
+      "Optimized for trust: clear visuals, simple navigation, and a straightforward CTA",
+      "Balanced custom work inquiries with direct product sales",
+      "Built with maintainability in mind so updates don’t require ongoing developer effort",
+    ],
+
+    nextSteps: [
+      "Add more product photography and expand the gallery content over time",
+      "SEO/local search tuning once content stabilizes",
+      "Lightweight email capture for launches and seasonal drops",
+    ],
+    liveUrl: "https://531workshop.com",
+    images: [
+      {
+        src: "/images/portfolio/screenshot_viewport-new.png",
+        alt: "531 Workshop — new homepage",
+        caption: "After — modern layout and clearer entry points",
+      },
+      {
+        src: "/images/portfolio/531-shop.png",
+        alt: "531 Workshop — product page",
+        caption: "Product detail flow with purchase path",
+      },
+      {
+        src: "/images/portfolio/screenshot_viewport-old.png",
+        alt: "531 Workshop — old site",
+        caption: "Before — dated layout and no clear browsing path",
+      },
+    ],
+  },
   {
     id: "veilmark",
     title: "VeilMark — AI Authorship Detection",
