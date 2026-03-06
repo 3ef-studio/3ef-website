@@ -96,7 +96,7 @@ export default function Hero(): JSX.Element {
             </div>
 
             <p className="mt-4 text-xs text-muted-foreground">
-              Product builds • Agentic experiments • Right-sized consulting
+              Product builds • Agentic experiments 
             </p>
           </div>
         </div>
