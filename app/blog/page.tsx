@@ -123,17 +123,7 @@ export default function BlogPage() {
             </Link>
           </div>
 
-          <div className="rounded-2xl border border-border bg-background p-4">
-            <p className="text-xs text-muted-foreground">
-              Looking for help with a website or audit?
-            </p>
-            <Link
-              href="/consulting"
-              className="mt-2 inline-block text-sm font-medium text-accent hover:brightness-110 transition"
-            >
-              See consulting →
-            </Link>
-          </div>
+         
         </aside>
       </div>
     </div>

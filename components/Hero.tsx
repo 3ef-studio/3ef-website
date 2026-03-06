@@ -63,7 +63,7 @@ export default function Hero(): JSX.Element {
 
             <p className="mt-4 text-muted-foreground sm:text-lg">
               Three Eagles Forge is an independent studio building practical software,
-              tools, and websites. Explore the work, or start with a focused consulting engagement.
+              tools, and websites. Explore the work.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -74,15 +74,6 @@ export default function Hero(): JSX.Element {
                 aria-label="View the portfolio"
               >
                 View Portfolio
-              </Link>
-
-              <Link
-                href="/consulting"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-text shadow-sm transition
-                           hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-                aria-label="Explore consulting services"
-              >
-                Consulting
               </Link>
 
               <Link

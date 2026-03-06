@@ -52,17 +52,7 @@ export default function HomePage() {
               Built to produce clear, defensible findings and a practical upgrade path.
             </p>
 
-            <div className="mt-5 flex items-center justify-between">
-              <Link
-                href="/consulting"
-                className="text-sm font-medium text-accent hover:opacity-90"
-              >
-                See consulting →
-              </Link>
-              <span className="rounded-full border border-border bg-background px-3 py-1 text-xs text-muted-foreground">
-                Agentic audits
-              </span>
-            </div>
+            
           </li>
 
           {/* VeilMark */}

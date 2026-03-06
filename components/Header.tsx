@@ -7,7 +7,7 @@ import type { JSX } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import NavLink from "@/components/NavLink";
-import { Button } from "@/components/ui/button";
+
 import {
   Sheet,
   SheetContent,
@@ -26,9 +26,7 @@ export default function Header(): JSX.Element {
   const [open, setOpen] = useState(false);
 
   const links: HeaderLink[] = [
-    { href: "/consulting", label: "Services", primary: true },
-    { href: "/products", label: "Products" },
-    { href: "/portfolio", label: "Projects" },
+    { href: "/portfolio", label: "Projects", primary: true },
     { href: "/blog", label: "Blog" },
     { href: "/about", label: "About" },
   ];
@@ -110,19 +108,7 @@ export default function Header(): JSX.Element {
                   </Link>
                 ))}
 
-                {/* Optional mobile CTAs */}
-                <div className="mt-4 grid grid-cols-1 gap-2">
-                  <Button
-                    asChild
-                    variant="secondary"
-                    onClick={() => setOpen(false)}
-                  >
-                    <Link href="/consulting">Advisory</Link>
-                  </Button>
-                  <Button asChild onClick={() => setOpen(false)}>
-                    <Link href="/blog">Latest</Link>
-                  </Button>
-                </div>
+                
               </div>
             </SheetContent>
           </Sheet>
