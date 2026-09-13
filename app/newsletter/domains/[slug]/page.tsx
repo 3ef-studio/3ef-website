@@ -1,5 +1,6 @@
 // app/newsletter/domains/[slug]/page.tsx
 
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import DDENewsletterForm from "@/components/DDENewsletterForm";
 import {
@@ -86,12 +87,12 @@ export default async function DdeIssuePage({
           types, pricing, and notes.
         </p>
         <div className="flex flex-wrap gap-3 pt-2">
-          <a
+          <Link
             href="/newsletter/domains"
             className="text-sm text-muted-foreground underline-offset-2 hover:underline"
           >
             ← Back to newsletter overview
-          </a>
+          </Link>
         </div>
       </section>
 

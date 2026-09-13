@@ -49,7 +49,9 @@ module.exports = {
     },
   },
   plugins: [
+    // eslint-disable-next-line @typescript-eslint/no-require-imports -- .cjs config file, require() is correct here
     require("@tailwindcss/typography"),
+    // eslint-disable-next-line @typescript-eslint/no-require-imports -- .cjs config file, require() is correct here
     require("tailwindcss-animate"),
   ],
 };

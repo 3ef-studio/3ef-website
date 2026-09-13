@@ -1,3 +1,5 @@
+> **HISTORICAL / SUPERSEDED** — This document is an early-phase TODO list (Buttondown, `/products` stub, consulting-era items) that no longer reflects the current site or its content model. Preserved for history only. See `data/backlog.json` (surfaced on `/about`) for the current backlog, and `/docs/PROJECT_STATE.md` for current status.
+
 # Sprint 2 – Content & Newsletter
 **Focus:** Publish first real content + enable subscription flow.
 

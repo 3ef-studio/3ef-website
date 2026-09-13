@@ -1,3 +1,5 @@
+> **HISTORICAL / SUPERSEDED** — This document describes the site's original "3EF Studio" consulting-business phase (Oct 2025). Positioning, provider choices (Buttondown, Plausible-via-env), and phase names below no longer reflect the current site. Preserved for history only. See `/docs/PROJECT_STATE.md` for current status.
+
 # Sprint 1 – Planning → Setup → Deploy
 **Dates:** 2025-10-27 → 2025-10-28  
 **Goal:** Establish core 3EF website stack and deploy first live version.

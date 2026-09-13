@@ -34,25 +34,19 @@ motion:
   enter: "250ms"
 
 
+# NOTE: This file is a hand-maintained design-token reference only.
+# Nothing in the application reads context.yml at build or runtime
+# (there is no YAML parser in this project) — it exists to document
+# the intended brand/token source of truth for humans and agents.
+#
+# For current feature status, active integrations, and site phase,
+# see /docs/PROJECT_STATE.md and /docs/INTEGRATIONS.md instead of
+# duplicating that information here — those are the living sources
+# of truth for "what's true today."
+
 flags:
-dark_mode_default: true
-show_products_teaser: true
+  dark_mode_default: true
 
 env:
-  newsletter_provider: "buttondown"
-  analytics_provider: "plausible"
   hosting: "vercel"
   domain: "3ef.studio"
-
-features:
-  blog: true
-  products_page: false
-  analytics: false
-  newsletter_form: true
-  mdx_enabled: false
-  ai_agents_phase: 0  # future flag
-
-meta:
-  version: "v0.1.0-site-mvp"
-  last_updated: "2025-10-28"
-  next_sprint: "sprint-2-content-newsletter"

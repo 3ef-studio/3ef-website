@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 3EF Website
 
-## Getting Started
+The public website for **Three Eagles Forge (3EF)** — a personal project laboratory and engineering learning portfolio. It publishes writing, project case studies, and a parked domain-discovery newsletter experiment.
 
-First, run the development server:
+See [`docs/PROJECT_STATE.md`](docs/PROJECT_STATE.md) for a current-state snapshot (purpose, canonical surfaces, integration status, known gaps) and [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md) for what's actually wired up vs. historical/aspirational. If you're an AI agent working in this repo, read [`CLAUDE.md`](CLAUDE.md) first.
+
+## Stack
+
+Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 3 + shadcn-style UI primitives · Neon (Postgres) · Resend · Plausible
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copy `.env.example` to `.env` and fill in real values — see that file for what each variable does. At minimum you'll need a Neon `DATABASE_URL` and a `RESEND_API_KEY` for the newsletter subscribe/confirm flow to work locally.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+```bash
+pnpm dev     # local dev server
+pnpm build   # production build (also runs the TypeScript check)
+pnpm start   # run a production build
+pnpm lint    # ESLint
+```
 
-To learn more about Next.js, take a look at the following resources:
+There is no test suite and no `typecheck` script — `pnpm build` is the correctness gate.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `app/` — routes (App Router)
+- `content/blog/*.mdx` — blog posts (Markdown with frontmatter)
+- `lib/portfolio.ts` — canonical project/case-study data (rendered by `/portfolio`)
+- `data/dde/` — historical output from the (parked) Domain Discovery Engine newsletter pipeline
+- `docs/` — living documentation; `docs/history/` holds superseded, historical-only material
 
-## Deploy on Vercel
+## Documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| File | Purpose |
+|---|---|
+| `docs/PROJECT_STATE.md` | Current-state snapshot — read this first |
+| `docs/INTEGRATIONS.md` | Status of every external integration |
+| `docs/development/DEFINITION_OF_DONE.md` | Validation checklist for changes |
+| `docs/history/` | Superseded sprint notes / TODOs from the site's earlier consulting-business phase |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+
+Deployed on Vercel. Deployment/DNS/project settings are managed outside this repository.

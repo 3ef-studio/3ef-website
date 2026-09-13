@@ -124,12 +124,6 @@ export default async function PostPage({
           >
             View projects →
           </Link>
-          <Link
-            href="/consulting"
-            className="text-sm text-muted-foreground hover:text-accent transition"
-          >
-            Website audits & consulting →
-          </Link>
         </div>
       </section>
     </article>
