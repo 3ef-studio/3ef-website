@@ -7,15 +7,10 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/5">
-      <div className="mx-auto max-w-6xl px-4 py-10 grid gap-6 sm:grid-cols-3">
+      <div className="mx-auto max-w-6xl px-4 py-10 grid gap-6 sm:grid-cols-2">
         {/* Brand */}
         <div className="text-sm text-muted-foreground">
           © {year} Three Eagles Forge Studio
-        </div>
-
-        {/* Labs */}
-        <div className="flex flex-col gap-2 text-sm">
-         
         </div>
 
         {/* Social */}

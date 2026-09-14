@@ -27,7 +27,7 @@ export default function Header(): JSX.Element {
 
   const links: HeaderLink[] = [
     { href: "/portfolio", label: "Projects", primary: true },
-    { href: "/blog", label: "Blog" },
+    { href: "/blog", label: "Writing" },
     { href: "/about", label: "About" },
   ];
 

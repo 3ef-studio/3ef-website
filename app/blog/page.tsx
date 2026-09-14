@@ -109,17 +109,17 @@ export default function BlogPage() {
         <aside className="space-y-4">
           <div className="rounded-2xl bg-card p-4 shadow-soft">
             <h2 className="text-sm font-semibold text-foreground">
-              DDE Weekly Top Domains
+              Domain Discovery Engine
             </h2>
             <p className="mt-2 text-xs text-muted-foreground">
-              A weekly list of currently available brandable domains discovered
-              by the Domain Discovery Engine.
+              A parked newsletter experiment that scored brandable domains
+              weekly. Past issues are still viewable.
             </p>
             <Link
               href="/newsletter/domains"
-              className="mt-3 inline-block rounded-xl bg-accent px-4 py-2 text-xs font-medium text-black shadow-sm hover:opacity-90 transition"
+              className="mt-3 inline-block text-xs font-medium text-muted-foreground underline-offset-2 transition hover:text-accent hover:underline"
             >
-              View Weekly Top Domains
+              View archive →
             </Link>
           </div>
 
