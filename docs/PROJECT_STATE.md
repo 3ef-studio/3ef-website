@@ -61,6 +61,7 @@ DDE was the most actively developed feature in this repo's recent history (weekl
 - No CI (no `.github/workflows`).
 - No database migration files — the three Postgres tables this app has used are documented only via inline SQL (see `docs/INTEGRATIONS.md`).
 - No deployment/infra config in-repo (no `vercel.json`); Vercel project settings, env vars, and DNS are managed outside this repository and were not inspected.
+- Next.js is on the 16.0.x line (16.0.11). Several Next advisories, including two criticals that don't apply to the current Vercel deployment, are only fixed in 16.2.11+/16.3.3+; that minor upgrade has not been done. See `docs/SECURITY_ADVISORIES.md`.
 - `config/context.yml` documents design tokens by hand with no generation link to `tailwind.config.cjs`/`globals.css` — the two must be kept in sync manually.
 
 ## Current project phase

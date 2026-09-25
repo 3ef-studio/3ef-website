@@ -44,6 +44,7 @@ There is no test suite and no `typecheck` script — `pnpm build` is the correct
 |---|---|
 | `docs/PROJECT_STATE.md` | Current-state snapshot — read this first |
 | `docs/INTEGRATIONS.md` | Status of every external integration |
+| `docs/SECURITY_ADVISORIES.md` | Known dependency advisories, applicability, and what's still open |
 | `docs/development/DEFINITION_OF_DONE.md` | Validation checklist for changes |
 | `docs/history/` | Superseded sprint notes / TODOs from the site's earlier consulting-business phase |
 
