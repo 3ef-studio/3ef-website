@@ -69,8 +69,27 @@ Ordered by severity.
    - No Reply-To on any email.
    - Two calling conventions for Resend (raw `fetch` vs SDK) — already noted in
      `docs/INTEGRATIONS.md`.
-8. **Observation, not a deliverability bug:** Home-page signups (`source = "Home Page"`)
-   receive a confirmation and then nothing, ever. See §8, D5.
+8. **Concurrent confirms both send the welcome issue.** `consumeToken`
+   (`lib/email/verify.ts`) runs `SELECT email, expires_at …`, then
+   `UPDATE app.subscriptions SET verified = TRUE …`, then
+   `DELETE … WHERE token_hash = …` as three separate statements over Neon's HTTP driver —
+   no transaction and no conditional claim. Two overlapping requests (double-click, or a
+   scanner fetch racing the subscriber's click) both find the token, both return
+   `{ ok: true }`, and `app/newsletter/confirm/route.ts` calls
+   `sendWelcomeIssueIfNewsletter` twice. The GET→POST change in §5.2 removes the scanner
+   trigger but not a double-submitted form.
+9. **The `send-latest` secret check is weaker than it needs to be (low).**
+   `app/api/newsletter/send-latest/route.ts` compares with `token !== MANUAL_TOKEN` (not
+   constant-time), accepts a secret of any length, and returns
+   `reason: "missing_header" | "token_mismatch" | "missing_manual_token_env"` in the 401
+   body — telling an unauthenticated caller which check failed and whether the server is
+   configured. It does already fail closed when the secret is unset.
+10. **Observation, not a deliverability bug:** Home-page signups (`source = "Home Page"`)
+    receive a confirmation and then nothing, ever. See §8, D5.
+
+_Findings 8 and 9 were added 2026-10-25 from a review of Cosmo's recent engineering
+lessons (exactly-one-winner claims with race tests — Cosmo M-24/M-86/M-91; constant-time,
+fail-closed, minimum-length Cron secret — Cosmo M-86)._
 
 ---
 
@@ -87,6 +106,8 @@ Ordered by severity.
 | Signed or hashed unsubscribe token | signed token (`AUTH_SECRET`) | n/a | **New** (§5.2) |
 | Check Resend's returned `error` | `EmailSendFailedError` | D3 (optional) | **Required** for the blast |
 | Verified-only recipients | (implicit — app users) | n/a | **Required** — Phase 0 |
+| Exactly-one-winner claim before a side effect | row lock / conditional claim (M-24, M-86, M-91) | atomic token claim | **Port** to `consumeToken` (§5.2, finding 8) |
+| Constant-time, fail-closed, minimum-length shared secret | Cron secret (M-86) | n/a (no secret endpoints) | **Port** to `send-latest` (§5.2, finding 9) |
 
 ---
 
@@ -95,7 +116,7 @@ Ordered by severity.
 | Phase | Scope | Risk (CLAUDE.md tier) | Depends on |
 |---|---|---|---|
 | **0 — Stop non-consensual sends** | `send-latest` filters `verified = TRUE`; optionally disable it entirely until Phase 2 ships (D2) | MEDIUM | D1 (narrow un-park) |
-| **1 — Message hygiene** | `lib/email/` helpers, plain text, full documents, validated `SITE_URL`, escaping, Reply-To, confirm on POST, Resend error handling | MEDIUM | D1 |
+| **1 — Message hygiene** | `lib/email/` helpers, plain text, full documents, validated `SITE_URL`, escaping, Reply-To, confirm on POST, atomic token claim, `send-latest` secret check, Resend error handling | MEDIUM | D1 |
 | **2 — Unsubscribe** | `unsubscribed_at` column, token, endpoint, `List-Unsubscribe` headers, footer, postal address | **HIGH** (schema) | D1, D3, D4 |
 | **3 — Ops** | DNS / Resend / Vercel env checklist (§7) | HIGH (deployment settings) — owner action | — |
 
@@ -171,6 +192,30 @@ Phase 0 is small enough to ship on its own and should go first. **Do not run
 - Emailed URLs don't change, so outstanding confirmation links keep working.
 - `consumeToken` needs a read-only sibling (`findValidToken`) for the GET.
 
+**Atomic token claim (`lib/email/verify.ts` `consumeToken`, finding 8)**
+- Claim the token with one statement that only one request can win:
+  `DELETE FROM app.email_verification_tokens WHERE token_hash = $1 RETURNING email, expires_at`.
+  No row → `not_found` (an already-consumed token looks the same — the first request has
+  already done the work). Row returned but expired → `expired` (the row is already gone,
+  as today). Otherwise → `UPDATE app.subscriptions SET verified = TRUE …` and return
+  `{ ok: true, email }`.
+- Only the request that received the row goes on to `sendWelcomeIssueIfNewsletter`. Two
+  overlapping `DELETE`s on the same row serialise in Postgres; the second finds nothing to
+  delete and returns no row.
+- If the process dies between the `DELETE` and the `UPDATE`, the subscriber is left
+  unverified with no token and must re-subscribe — the same outcome as an expired link,
+  and acceptable. (Wrapping both in Neon's `sql.transaction([...])` would close it, but
+  the `UPDATE` depends on the `DELETE`'s result, so it would need a single CTE statement;
+  not worth the complexity here.)
+
+**`send-latest` secret check (finding 9)**
+- Compare with `crypto.timingSafeEqual` over equal-length buffers (length mismatch →
+  unauthorized).
+- Treat a configured `NEWSLETTER_MANUAL_TOKEN` shorter than 32 characters as unset —
+  refuse to run (fail closed), as Cosmo's Cron route does.
+- Return a bare `401 { ok: false, error: "Unauthorized" }`; keep the specific `authReason`
+  in the server-side `console.warn` only.
+
 **Confirmation throttling (small)**
 - In `/api/subscribe`, if a token for that email was created in the last N minutes
   (e.g. 10), skip sending and return the same success message. Needs the token row's
@@ -244,6 +289,7 @@ NULL`), never on the bare form submission.
 | `NEWSLETTER_UNSUBSCRIBE_SECRET` | **New, Phase 2.** ≥ 32 random bytes. Required for issue sends; `send-latest` refuses to run without it. |
 | `NEWSLETTER_POSTAL_ADDRESS` | **New, Phase 2** (D4). Required for issue sends. |
 | `NEWSLETTER_SEND_ENABLED` | **New, optional, Phase 0** (D2). |
+| `NEWSLETTER_MANUAL_TOKEN` | Unchanged name; must now be ≥ 32 characters or `send-latest` refuses to run (Phase 1). Rotate it if the current value is shorter. |
 
 ---
 
@@ -300,6 +346,12 @@ insertion) — or validate manually as below. Either way:
   text part; opening the link shows the confirm page and does **not** verify (check the
   row); pressing the button verifies and sends the welcome issue (text part present).
   Confirm that a malformed `SITE_URL` falls back correctly.
+- Phase 1, atomic claim: submit the confirm form twice in quick succession (or fire two
+  parallel POSTs with the same token via `curl … & curl …`) and confirm exactly one
+  welcome issue arrives; repeat once against the old `consumeToken` to see two.
+- Phase 1, secret check: `send-latest?dry=1` with no header, a wrong header, and a
+  wrong-length header all return the same bare 401; with `NEWSLETTER_MANUAL_TOKEN` set
+  to a short value, even the correct header is refused.
 - Phase 2: one-click unsubscribe from Gmail's control sets `unsubscribed_at`; `GET` on the
   unsubscribe URL changes nothing; a forged token returns 400; a `dry=1` blast excludes
   the unsubscribed address.
