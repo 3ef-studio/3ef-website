@@ -12,7 +12,6 @@ These were checked in code; hosting facts are taken from `README.md` / `docs/PRO
 - **App Router only.** No `middleware.ts` / `proxy.ts`, no `rewrites`/`redirects`, no `i18n`, empty `next.config.ts`.
 - **No Server Actions / Server Functions** (`"use server"` appears nowhere), no `use cache`, no Cache Components / PPR.
 - `next/image` is used with **local, author-controlled images only** (jpg/png under `public/`); no `remotePatterns`, no AVIF sources, default formats.
-- `next/script` is used for Plausible with `afterInteractive` (not `beforeInteractive`); no CSP nonces.
 - Server-side `fetch` (Resend in `lib/email/verify.ts`, Neon HTTP driver) is uncached (Next 16 default `no-store`; nothing opts into caching).
 - Blog markdown/frontmatter (`gray-matter` → `js-yaml`, `unified`/`mdast-util-to-hast`) is parsed at build time from repo content, not user input.
 
@@ -54,7 +53,7 @@ No 16.0.x release contains these fixes. Upgrading to 16.3.x is a **minor framewo
 | GHSA-mg66-mrh9-m8jx, GHSA-h27x-g6w4-24gq, GHSA-5f7q-jpqc-wp7h — PPR/Cache Components DoS | high / moderate | PPR / Cache Components not enabled |
 | GHSA-h64f-5h5j-jqjh, GHSA-q8wf-6r8g-63ch, GHSA-9g9p-9gw9-jx7f, GHSA-3x4c-7xq6-9pq8 — Image Optimizer DoS / disk growth | moderate | Self-hosted default loader only; Vercel uses its own optimizer; no `remotePatterns` |
 | GHSA-ffhc-5mcf-pf4q — XSS with CSP nonces | moderate | No CSP nonces |
-| GHSA-gx5p-jg67-6x7h — XSS in `beforeInteractive` scripts | moderate | Only `afterInteractive` with static content |
+| GHSA-gx5p-jg67-6x7h — XSS in `beforeInteractive` scripts | moderate | No `next/script` usage anywhere in the app (the only instance, loading Plausible, was removed) |
 | GHSA-68g3-v927-f742, GHSA-4633-3j49-mh5q — fetch response cache confusion | moderate | Server `fetch` is not cached |
 | GHSA-jcc7-9wpm-mj36 — dev HMR websocket CSRF | low | `next dev` only; don't expose dev server to untrusted networks |
 

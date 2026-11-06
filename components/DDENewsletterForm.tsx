@@ -1,6 +1,5 @@
 "use client";
 import { useId, useState } from "react";
-import { track } from "@/lib/analytics";
 
 export default function NewsletterForm({ source = "DDE Newsletter" }: { source?: string }) {
   const uid = useId();
@@ -18,7 +17,6 @@ export default function NewsletterForm({ source = "DDE Newsletter" }: { source?:
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
-    track("newsletter_subscribe_attempt", { source });
     const res = await fetch("/api/subscribe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -27,9 +25,7 @@ export default function NewsletterForm({ source = "DDE Newsletter" }: { source?:
     setBusy(false);
     if (res.ok) {
       setDone(true);
-      track("newsletter_subscribe_success", { source });
     } else {
-      track("newsletter_subscribe_error", { source });
       alert("Sorry—couldn’t subscribe right now.");
     }
   }

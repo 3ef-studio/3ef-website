@@ -26,7 +26,8 @@ Do not create a second project/product data model alongside `lib/portfolio.ts` (
 
 ## Active vs. parked systems
 
-- **Active:** blog, `/portfolio`, DDE newsletter subscribe/confirm flow, Plausible analytics.
+- **Active:** blog, `/portfolio`, DDE newsletter subscribe/confirm flow.
+- **Removed:** Plausible Analytics — deliberately removed with no replacement implemented. The site currently has no analytics/tracking of any kind; don't assume one exists or add one without being asked.
 - **Parked (preserve, do not extend):** the DDE (Domain Discovery Engine) newsletter and all its historical run data under `data/dde/`. Treat it as read-only external pipeline output. Do not "improve" or refactor DDE-related code without an explicit request — see `docs/PROJECT_STATE.md`.
 - **Removed (Mission 2):** `/consulting`, `/api/lead`, `/products`, `/projects`, `/labs`, `/sandbox/product-test`, and their exclusive supporting code. Recoverable from git history; do not resurrect without explicit instruction.
 
@@ -63,4 +64,4 @@ Living docs to keep current when a change touches them: `README.md`, `docs/PROJE
 
 ## Stop conditions
 
-Stop and summarize (don't keep going) when: the approved scope is complete, you hit a decision that changes site positioning/IA/visual design (that belongs to a dedicated future mission, not an incidental change), or you'd need to touch database schema, Neon, Resend behavior, Plausible, or Vercel/deployment settings without having been explicitly asked to.
+Stop and summarize (don't keep going) when: the approved scope is complete, you hit a decision that changes site positioning/IA/visual design (that belongs to a dedicated future mission, not an incidental change), or you'd need to touch database schema, Neon, Resend behavior, or Vercel/deployment settings without having been explicitly asked to.

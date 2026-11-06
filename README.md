@@ -6,7 +6,7 @@ See [`docs/PROJECT_STATE.md`](docs/PROJECT_STATE.md) for a current-state snapsho
 
 ## Stack
 
-Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 3 + shadcn-style UI primitives · Neon (Postgres) · Resend · Plausible
+Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 3 + shadcn-style UI primitives · Neon (Postgres) · Resend
 
 ## Getting started
 

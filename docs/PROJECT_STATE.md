@@ -47,7 +47,8 @@ DDE was the most actively developed feature in this repo's recent history (weekl
 
 - Neon Postgres (subscriptions, verification tokens)
 - Resend (verification + DDE digest emails)
-- Plausible Analytics (hardcoded script tag + custom events)
+
+Plausible Analytics was removed (deliberately, no replacement implemented) — see `docs/INTEGRATIONS.md`'s Removed section. The site currently has no analytics/tracking of any kind.
 
 ## Known parked / historical functionality
 
